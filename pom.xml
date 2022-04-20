@@ -20,9 +20,7 @@
 		</plugins>
 	</build>
 
-
-
-	<dependencies>
+<dependencies>
 
 				<!-- https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-api -->
 		<dependency>
@@ -47,4 +45,6 @@
 
 
 	</dependencies>
+
+	
 </project>
