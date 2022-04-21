@@ -14,7 +14,7 @@ import pe.edu.upc.entities.Clasificacion;
 
 public class ClasificacionImplDao implements IClasificacionDao {
 
-	@PersistenceContext(unitName = "TB2")
+	@PersistenceContext(unitName = "demoGPoint")
 	private EntityManager em;
 
 	@Transactional
