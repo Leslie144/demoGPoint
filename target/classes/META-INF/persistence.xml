@@ -6,6 +6,7 @@
 	<persistence-unit name="demoGPoint">
 		<jta-data-source>java:/DemoGPointDS</jta-data-source>
 		<class>pe.edu.upc.entities.Review</class>
+		<class>pe.edu.upc.entities.Clasificacion</class>
 		<properties>
 			<property
 				name="javax.persistence.schema-generation.database.action"
