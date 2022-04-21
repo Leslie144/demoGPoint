@@ -11,9 +11,17 @@
 
 		<h2>Lista de Clasificaciones</h2>
 		<h:form>
+
+			<div class="form-group">
+				<p:commandButton value="Nuevo"
+					action="#{clasificacionController.newClasificacion()}"
+					styleClass="btn btn-primary" ajax="false" />
+			</div>
+
 			<p:dataTable id="listaClasificacion" var="c"
-				value="#{clasificacionController.listaClasificaciones}" paginator="true"
-				paginatorPosition="top" rowsPerPageTemplate="5,10,15,20,25" rows="5"
+				value="#{clasificacionController.listaClasificaciones}"
+				paginator="true" paginatorPosition="top"
+				rowsPerPageTemplate="5,10,15,20,25" rows="5"
 				emptyMessage="No existen registros" rowsIndexVar="item">
 
 
