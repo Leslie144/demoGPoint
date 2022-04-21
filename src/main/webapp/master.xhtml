@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"></link>
+	<link rel="shortcut icon" type="image/x-icon"
+		href="resources/img/favicon.ico" />
+
+</h:head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+
+
+	<div class="collapse navbar-collapse" id="navbarText">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="panel.xhtml">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="resena.xhtml">Reseñas</a></li>
+			<li class="nav-item"><a class="nav-link"
+				href="listaResenas.xhtml">Lista de Reseñas</a></li>
+
+		</ul>
+	</div>
+	</nav>
+	<div class="container">
+
+		<ui:insert name="content">
+		</ui:insert>
+
+	</div>
+	<div>
+		<ui:insert name="footerCont"></ui:insert>
+	</div>
+</body>
+</html>
