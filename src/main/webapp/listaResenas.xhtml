@@ -9,6 +9,13 @@
 	<ui:define name="content">
 		<h2>Lista de Reseñas</h2>
 		<h:form>
+
+			<div class="form-group">
+				<p:commandButton value="Nuevo"
+					action="#{reviewController.newReview()}"
+					styleClass="btn btn-primary" ajax="false" />
+			</div>
+
 			<p:dataTable id="lstResenas" var="r"
 				value="#{reviewController.listaResenas}" paginator="true"
 				paginatorPosition="top" rowsPerPageTemplate="5,10,15,20,25"
@@ -31,6 +38,8 @@
 				</p:column>
 			</p:dataTable>
 		</h:form>
+	</ui:define>
+	<ui:define name="footerCont">
 	</ui:define>
 </ui:composition>
 </html>
