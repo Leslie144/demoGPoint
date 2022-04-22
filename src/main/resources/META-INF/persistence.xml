@@ -8,6 +8,7 @@
 		<class>pe.edu.upc.entities.Review</class>
 		<class>pe.edu.upc.entities.Clasificacion</class>
 		<class>pe.edu.upc.entities.Categoria</class>
+		<class>pe.edu.upc.entities.Rol</class>
 		<properties>
 			<property
 				name="javax.persistence.schema-generation.database.action"

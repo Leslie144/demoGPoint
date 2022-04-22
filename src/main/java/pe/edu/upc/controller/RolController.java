@@ -30,7 +30,7 @@ public class RolController {
 
 	// metodos
 
-	public String newPerson() {
+	public String newRol() {
 
 		this.setP(new Rol());
 		return "rol.xhtml";

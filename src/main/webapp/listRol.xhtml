@@ -11,6 +11,14 @@
 
 		<h2>Lista de roles</h2>
 		<h:form>
+		
+			<div class="form-group">
+				<p:commandButton value="Nuevo"
+					action="#{rolController.newRol()}"
+					styleClass="btn btn-primary" ajax="false" />
+			</div>
+		
+		
 			<p:dataTable id="lstPersonas" var="ro"
 				value="#{rolController.listaRoles}" paginator="true"
 				paginatorPosition="top" rowsPerPageTemplate="5,10,15,20,25" rows="5"
