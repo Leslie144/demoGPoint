@@ -8,7 +8,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import pe.edu.upc.entidades.Categoria;
+import pe.edu.upc.entities.Categoria;
 import pe.edu.upc.service.ICategoriaService;
 
 @Named
