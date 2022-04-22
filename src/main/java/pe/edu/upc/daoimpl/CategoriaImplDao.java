@@ -9,7 +9,7 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import pe.edu.upc.dao.ICategoriaDao;
-import pe.edu.upc.entidades.Categoria;
+import pe.edu.upc.entities.Categoria;
 
 public class CategoriaImplDao implements ICategoriaDao {
 	
@@ -17,7 +17,7 @@ public class CategoriaImplDao implements ICategoriaDao {
 	private EntityManager em;
 	
 
-	@Transactional
+	@Transactional 
 	@Override
 	public void insert(Categoria cat) {
 		// TODO Auto-generated method stub

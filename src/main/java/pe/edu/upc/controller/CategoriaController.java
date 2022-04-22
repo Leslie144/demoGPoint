@@ -13,7 +13,7 @@ import pe.edu.upc.service.ICategoriaService;
 
 @Named
 @RequestScoped
-public class CategoriaController 
+public class CategoriaController {
 	
 	@Inject
 	private ICategoriaService caService;

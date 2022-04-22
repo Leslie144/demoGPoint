@@ -2,7 +2,7 @@ package pe.edu.upc.dao;
 
 import java.util.List;
 
-import pe.edu.upc.entidades.Categoria;
+import pe.edu.upc.entities.Categoria;
 
 public interface ICategoriaDao {
 	
