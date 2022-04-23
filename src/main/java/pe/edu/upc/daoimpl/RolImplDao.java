@@ -13,7 +13,7 @@ import pe.edu.upc.entities.Rol;
 
 public class RolImplDao implements IRolDao {
 
-	@PersistenceContext(unitName = "gpoint1")
+	@PersistenceContext(unitName = "demoGPoint")
 	private EntityManager em;
 
 	@Transactional

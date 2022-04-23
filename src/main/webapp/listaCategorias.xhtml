@@ -13,6 +13,12 @@
 
 		<h:form>
 
+			<div class="form-group">
+				<p:commandButton value="Nuevo"
+					action="#{categoriaController.newCategoria()}"
+					styleClass="btn btn-primary" ajax="false" />
+			</div>
+
 			<p:dataTable id="LstCategorias"
 				value="#{categoriaController.listaCategorias}" var="pe"
 				paginator="true" paginatorPosition="top"
