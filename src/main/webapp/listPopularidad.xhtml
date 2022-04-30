@@ -9,33 +9,32 @@
 
 	<ui:define name="content">
 
-		<h2>Lista de Popularidad</h2>
+		<h2>Lista de popularidades</h2>
 		<h:form>
-
-
 			<div class="form-group">
 				<p:commandButton value="Nuevo"
 					action="#{popularidadController.newPopularidad()}"
 					styleClass="btn btn-primary" ajax="false" />
 			</div>
-			
-			<p:dataTable id="lstpopularidad" var="pop"
-				value="#{PopularidadController.listaPersonas}" paginator="true"
+
+
+			<p:dataTable id="lstPopularidades" var="p"
+				value="#{popularidadController.listaPopularidadas}" paginator="true"
 				paginatorPosition="top" rowsPerPageTemplate="5,10,15,20,25" rows="5"
 				emptyMessage="No existen registros" rowsIndexVar="item">
 
 
 				<p:column headerText="Id">
-					<h:outputText value="#{pop.idPopularidad}" />
+					<h:outputText value="#{p.idPopularidad}" />
 				</p:column>
 
-				<p:column headerText="Tipo Popularidad">
-					<h:outputText value="#{pop.tipoPopularidad}" />
+				<p:column headerText="Popularidad">
+					<h:outputText value="#{p.tipoPopularidad}" />
 				</p:column>
 
 				<p:column headerText="Operación">
 					<h:commandLink action="listPopularidad"
-						actionListener="#{PopularidadController.delete(pop)}">
+						actionListener="#{popularidadController.delete(p)}">
 					Eliminar
 					</h:commandLink>
 				</p:column>

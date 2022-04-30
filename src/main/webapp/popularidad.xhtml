@@ -4,64 +4,31 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
-	
-	<h:head>
-	<link rel="stylesheet"
-		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></link>
-</h:head>
-<body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="#">Navbar</a>
 
-	<div class="collapse navbar-collapse" id="navbarNav">
-		<ul class="navbar-nav">
-			<li class="nav-item active"><a class="nav-link"
-				href="panel.xhtml">Home <span class="sr-only">(current)</span>
-			</a></li>
-			<li class="nav-item"><a class="nav-link" href="popularidad.xhtml">Popularidad</a></li>
-			<li class="nav-item"><a class="nav-link" href="listPopularidad.xhtml">Lista Popularidad</a></li>
-		</ul>
-	</div>
-	</nav>
+<h:head></h:head>
+<ui:composition template="master.xhtml">
+	<ui:define name="content">
+		<h2>Registro de popularidades</h2>
+		<h:form>
 
-	<div class="container">
-		<ui:insert name="content"></ui:insert>
-
-	</div>
-
-	<div>
-
-		<ui:insert name="footerCont"></ui:insert>
-
-	</div>
-</body>
-	
-	
-	
-	
-	
+			<h:outputLabel value="Id" for="id" styleClass="control-label" />
+			<p:inputText id="id" styleClass="form-control"
+				value="#{popularidadController.p.idPopularidad}" required="true" />
 
 
+			<h:outputLabel value="Popularidad:" for="popularidad"
+				styleClass="control-label" />
+			<p:inputText id="popularidad" styleClass="form-control"
+				value="#{popularidadController.p.tipoPopularidad}" required="true" />
 
+			<p:commandButton value="Grabar"
+				actionListener="#{popularidadController.insert()}"
+				action="listPopularidad?faces-redirect=true" update="@form" />
 
+		</h:form>
+	</ui:define>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</ui:composition>
 
 
 </html>
-	
