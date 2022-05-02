@@ -34,7 +34,7 @@ public class ClasificacionController {
 	public String newClasificacion() {
 
 		this.setC(new Clasificacion());
-		return "Clasificacion.xhtml";
+		return "clasificacion.xhtml";
 	}
 
 	public void insert() {
