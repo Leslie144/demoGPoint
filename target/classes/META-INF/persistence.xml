@@ -12,6 +12,7 @@
 		<class>pe.edu.upc.entities.Popularidad</class>
 		<class>pe.edu.upc.entities.Calificacion</class>
 		<class>pe.edu.upc.entities.Usuario</class>
+		<class>pe.edu.upc.entities.Detallenotificacion</class>
 		<properties>
 			<property
 				name="javax.persistence.schema-generation.database.action"

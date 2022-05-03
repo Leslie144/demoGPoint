@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="master.xhtml">
+	<ui:define name="content">
+		<h2>Lista de Detalle de Notificaciones</h2>
+		<h:form>
+			<p:dataTable id="lstDetallenotificacion" var="dn"
+				value="#{detallenotificacionController.listaDetallenotificaciones}" paginator="true"
+				paginatorPosition="top" rowsPerPageTemplate="5,10,15,20,25" rows="5"
+				emptyMessage="No existen registros" rowsIndexVar="item">
+
+				<p:column headerText="Notificacion">
+					<h:outputText value="#{dn.notificacion.mensaje}" />
+				</p:column>
+
+				<p:column headerText="Juego">
+					<h:outputText value="#{dn.juego.nombreJuego}" />
+				</p:column>
+				
+				<p:column headerText="Usuario">
+					<h:outputText value="#{dn.usuario.nombre}" />
+				</p:column>
+				
+				<p:column headerText="Fecha de Publicacion">
+					<h:outputText value="#{dn.fechapublicacion}">
+						<f:convertDateTime pattern="dd-MM-yyyy" timeZone="UTC" />
+					</h:outputText>
+				</p:column>
+
+				<p:column headerText="Operación">
+					<h:commandLink action="listaDetallenotificaciones"
+						actionListener="#{detallenotificacionController.dn.delete()}">
+					Eliminar
+					</h:commandLink>
+				</p:column>
+
+
+
+			</p:dataTable>
+
+
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
+</html>
