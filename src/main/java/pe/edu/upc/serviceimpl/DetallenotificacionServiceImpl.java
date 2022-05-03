@@ -22,7 +22,7 @@ public class DetallenotificacionServiceImpl implements IDetallenotificacionServi
 
 	@Override
 	public List<Detallenotificacion> list() {
-		// TODO Auto-generated method stub
+		
 		return dnDao.list();
 	}
 

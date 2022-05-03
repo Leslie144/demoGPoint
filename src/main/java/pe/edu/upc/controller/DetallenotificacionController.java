@@ -12,6 +12,7 @@ import pe.edu.upc.entities.Detallenotificacion;
 import pe.edu.upc.entities.Rol;
 import pe.edu.upc.entities.Usuario;
 import pe.edu.upc.service.IDetallenotificacionService;
+import pe.edu.upc.service.IUsuarioService;
 @Named
 @RequestScoped
 public class DetallenotificacionController {
