@@ -22,12 +22,7 @@
 		</plugins>
 	</build>
 
-<<<<<<< Updated upstream
-=======
-	<dependencies>
->>>>>>> Stashed changes
-
-	<dependencies>
+<dependencies>
 
 		<!-- https://mvnrepository.com/artifact/javax.faces/javax.faces-api -->
 		<dependency>
@@ -45,7 +40,6 @@
 			<version>11.0.0</version>
 		</dependency>
 
-<<<<<<< Updated upstream
 		<!-- https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-api -->
 		<dependency>
 			<groupId>jakarta.platform</groupId>
@@ -54,20 +48,12 @@
 			<scope>provided</scope>
 		</dependency>
 
-=======
->>>>>>> Stashed changes
 		<!-- https://mvnrepository.com/artifact/org.omnifaces/omnifaces -->
 		<dependency>
 			<groupId>org.omnifaces</groupId>
 			<artifactId>omnifaces</artifactId>
 			<version>3.13</version>
 		</dependency>
-<<<<<<< Updated upstream
-=======
-
-
-
->>>>>>> Stashed changes
 
 	</dependencies>
 
