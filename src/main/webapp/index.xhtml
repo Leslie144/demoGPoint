@@ -27,16 +27,25 @@
 
 				<h:outputLabel value="Usuario:" for="usuario"
 					styleClass="control-label" />
-				<p:inputText id="usuario" styleClass="form-control" required="true" />
+				<p:inputText id="usuario" value="#{usuarioController.us.usuario}"
+					styleClass="form-control" required="true" />
 
 				<h:outputLabel value="Contraseña: " for="contrasena"
 					styleClass="control-label" />
-				<p:inputText id="contrasena" styleClass="form-control"
-					required="true" />
+				<p:inputText id="contrasena"
+					value="#{usuarioController.us.contrasena}"
+					styleClass="form-control" required="true" />
 
 			</h:panelGrid>
-			<a class="nav-link" href="panel.xhtml">Home</a>
-			<p:commandButton value="Login" styleClass="btn btn-primary" />
+			<a class="nav-link" href="panel.xhtml">Click aqui para entrar->
+				Home</a>
+			<p:commandButton value="Logins" styleClass="btn btn-primary" />
+
+			<p:commandButton value="Login"
+				action="#{usuarioController.ingresar()}" update=":frm"
+				styleClass="btn btn-primary" />
+
+
 
 			<p:commandButton value="Crear Usuario" styleClass="btn btn-primary" />
 		</div>

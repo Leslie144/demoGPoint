@@ -59,4 +59,20 @@ public class UsuarioImplDao implements IUsuarioDao {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Usuario> login(String usuario, String contrasena) {
+		List<Usuario> lista = new ArrayList<Usuario>();
+		try {
+			Query query = em.createQuery("FROM Usuario u WHERE u.usuario = ?1 and u.contrasena = ?2");
+			query.setParameter(1, usuario);
+			query.setParameter(2, contrasena);
+			lista = (List<Usuario>) query.getResultList();
+
+		} catch (Exception e) {
+			throw e;
+		}
+		return lista;
+	}
+
 }

@@ -39,4 +39,13 @@ public class UsuarioServiceImpl implements IUsuarioService {
 		uDao.update(id);
 	}
 
+	@Override
+	public Usuario login(Usuario usuario) {
+		List<Usuario> listUsuarios = uDao.login(usuario.getUsuario(), usuario.getContrasena());
+		if (listUsuarios.isEmpty())
+			return null;
+		else
+			return listUsuarios.get(0);
+	}
+
 }

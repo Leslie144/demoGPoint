@@ -12,4 +12,6 @@ public interface IUsuarioDao {
 	public void delete(int id);
 
 	public void update(Usuario id);
+
+	public List<Usuario> login(String usuario, String contrasena);
 }

@@ -21,6 +21,8 @@ public class UsuarioController {
 	private IUsuarioService usService;
 	private Usuario us;
 	List<Usuario> listaUsuarios;
+	private Usuario usuarioActual;
+
 
 	@Inject
 	private IRolService rService;
@@ -36,6 +38,16 @@ public class UsuarioController {
 
 	}
 
+	public String ingresar() {
+		usuarioActual = usService.login(us);
+		if (usuarioActual != null) {
+
+			return "panel.xhtml";
+		} else {
+			return "403.xhtml";
+		}
+	}
+	
 	public String newUsuario() {
 		this.setUs(new Usuario());
 		return "usuario.xhtml";

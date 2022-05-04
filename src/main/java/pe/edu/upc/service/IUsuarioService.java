@@ -12,4 +12,6 @@ public interface IUsuarioService {
 	public void delete(int id);
 
 	public void update(Usuario id);
+	
+	public Usuario login(Usuario usuario);
 }
