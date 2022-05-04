@@ -1,5 +1,6 @@
 package pe.edu.upc.service;
 
+
 import java.util.List;
 
 import pe.edu.upc.entities.Detallenotificacion;
@@ -10,5 +11,7 @@ public interface IDetallenotificacionService {
 	
 	public List<Detallenotificacion> list();
 	
-	public void delete(int idNotificacion);
+	public void delete(int id);
+	
+	public void update(Detallenotificacion id);
 }

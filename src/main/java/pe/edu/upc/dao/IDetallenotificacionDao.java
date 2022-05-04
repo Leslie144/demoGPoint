@@ -1,6 +1,8 @@
 package pe.edu.upc.dao;
 
+
 import java.util.List;
+
 
 import pe.edu.upc.entities.Detallenotificacion;
 
@@ -10,5 +12,7 @@ public interface IDetallenotificacionDao {
 	
 	public List<Detallenotificacion> list();
 	
-	public void delete(int idNotificacion);
+	public void delete(int id);
+	
+	public void update(Detallenotificacion id);
 }

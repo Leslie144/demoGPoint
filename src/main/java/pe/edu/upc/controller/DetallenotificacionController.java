@@ -2,34 +2,42 @@ package pe.edu.upc.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import pe.edu.upc.entities.DetalleResenas;
 import pe.edu.upc.entities.Detallenotificacion;
-import pe.edu.upc.entities.Rol;
+import pe.edu.upc.entities.Notificacion;
+
 import pe.edu.upc.entities.Usuario;
 import pe.edu.upc.service.IDetallenotificacionService;
+import pe.edu.upc.service.INotificacionService;
 import pe.edu.upc.service.IUsuarioService;
 @Named
 @RequestScoped
 public class DetallenotificacionController {
 	@Inject
 	private IDetallenotificacionService dnService;
-	
-	private INotificacionService noService;
-	private IJuegoService jService;
-	private IUsuarioService uService;
-
-	
 	private Detallenotificacion dn;
 	private List<Detallenotificacion> listaDetallenotificaciones;
 	
+	@Inject
+	private INotificacionService noService;
 	private List<Notificacion> listaNotificaciones;
-	private List<Juego> listaJuegos;
+	
+	@Inject
+	private IUsuarioService uService;
 	private List<Usuario> listaUsuarios;
+	
+
+	//@Inject
+		//private IJuegoService jService;
+		//private List<Juego> listaJuegos;
+	
 	
 	
 	//constructor
@@ -38,15 +46,21 @@ public class DetallenotificacionController {
 		this.dn = new Detallenotificacion();
 		this.listaDetallenotificaciones = new ArrayList<Detallenotificacion>();
 		this.listaNotificaciones = new ArrayList<Notificacion>();
-		this.listaJuegos = new ArrayList<Juego>();
+		//this.listaJuegos = new ArrayList<Juego>();
 		this.listaUsuarios = new ArrayList<Usuario>();
 		this.listNotificaciones();
-		this.listJuegos();
+		//this.listJuegos();
 		this.listUsuarios();
 		this.list();
 	}
 	
 	//metodos
+	
+	public String newDetallenotificacion() {
+
+		this.setDn(new Detallenotificacion());
+		return "detallenotificacion.xhtml";
+	}
 	
 	public void insert() {
 		try {
@@ -73,14 +87,14 @@ public class DetallenotificacionController {
 		}
 	}
 	
-	public void listJuegos() {
-		try {
-			listaJuegos = jService.list();
-		} catch (Exception e) {
-			System.out.println("Error al listar juegos en el controlador de detallenotificacion");
-		}
-	}
-	
+	//public void listJuegos() {
+		//try {
+			//listaJuegos = jService.list();
+		//} catch (Exception e) {
+			//System.out.println("Error al listar juegos en el controlador de detallenotificacion");
+		//}
+	//}
+
 	public void listUsuarios() {
 		try {
 			listaUsuarios = uService.list();
@@ -89,14 +103,14 @@ public class DetallenotificacionController {
 		}
 	}
 	
-	private void delete(Detallenotificacion dno) {
+	public void delete(Detallenotificacion dno) {
 		try {
-			
-			this.list();
+			dnService.delete(dno.getId());
 		} catch (Exception e) {
-			System.out.println("Error al eliminar en elcontroller rol");
+			System.out.println("Error ocurrio en el controlador al eliminar!!");
 		}
 	}
+
 	
 	
 	//getters y setters
@@ -121,13 +135,13 @@ public class DetallenotificacionController {
 		this.listaNotificaciones = listaNotificaciones;
 	}
 
-	public List<Juego> getListaJuegos() {
-		return listaJuegos;
-	}
+	//public List<Juego> getListaJuegos() {
+		//return listaJuegos;
+	//}
 
-	public void setListaJuegos(List<Juego> listaJuegos) {
-		this.listaJuegos = listaJuegos;
-	}
+	//public void setListaJuegos(List<Juego> listaJuegos) {
+		//this.listaJuegos = listaJuegos;
+	//}
 
 	public List<Usuario> getListaUsuarios() {
 		return listaUsuarios;
@@ -136,8 +150,8 @@ public class DetallenotificacionController {
 	public void setListaUsuarios(List<Usuario> listaUsuarios) {
 		this.listaUsuarios = listaUsuarios;
 	}
-	
-	
+
+
 	
 	
 }

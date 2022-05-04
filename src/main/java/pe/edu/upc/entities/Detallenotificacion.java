@@ -15,19 +15,22 @@ import javax.persistence.Table;
 @Table(name = "Detallenotificacion")
 public class Detallenotificacion {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	
 	@ManyToOne
-	@JoinColumn(name = "idNotificacion",nullable = false)
+	@JoinColumn(name = "idNotificacion", nullable = false)
 	private Notificacion notificacion;
 	
-	@Id
+	
 	@ManyToOne
 	@JoinColumn(name = "idUsuario", nullable = false)
 	private Usuario usuario;
 	
-	@Id
-	@ManyToOne
-	@JoinColumn(name = "idJuego", nullable = false)
-	private Juego juego;
+	
+	//@ManyTo
+	//@JoinColumn(name = "idJuego", nullable = false)
+	//private Juego juego;
 	
 	@Column(name = "fechapublicacion", nullable = false)
 	private Date fechapublicacion;
@@ -37,14 +40,24 @@ public class Detallenotificacion {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Detallenotificacion(Notificacion notificacion, Usuario usuario, Juego juego, Date fechapublicacion) {
+	public Detallenotificacion(int id, Notificacion notificacion, Usuario usuario, Juego juego, Date fechapublicacion) {
 		super();
+		this.id = id;
 		this.notificacion = notificacion;
 		this.usuario = usuario;
-		this.juego = juego;
+		//this.juego = juego;
 		this.fechapublicacion = fechapublicacion;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	
 	public Notificacion getNotificacion() {
 		return notificacion;
 	}
@@ -61,13 +74,13 @@ public class Detallenotificacion {
 		this.usuario = usuario;
 	}
 
-	public Juego getJuego() {
-		return juego;
-	}
+	//public Juego getJuego() {
+		//return juego;
+	//}
 
-	public void setJuego(Juego juego) {
-		this.juego = juego;
-	}
+	//public void setJuego(Juego juego) {
+		//this.juego = juego;
+	//}
 
 	public Date getFechapublicacion() {
 		return fechapublicacion;
@@ -79,5 +92,5 @@ public class Detallenotificacion {
 
 
 	
-	
+
 }

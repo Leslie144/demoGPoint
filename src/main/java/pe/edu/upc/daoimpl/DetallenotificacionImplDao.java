@@ -1,6 +1,7 @@
 package pe.edu.upc.daoimpl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -45,14 +46,27 @@ public class DetallenotificacionImplDao implements IDetallenotificacionDao {
 
 	@Transactional
 	@Override
-	public void delete(int idNotificacion) {
+	public void delete(int id) {
 		try {
-			Detallenotificacion dn = em.find(Detallenotificacion.class, idNotificacion);
+			Detallenotificacion dn = em.find(Detallenotificacion.class, id);
 			em.remove(dn);
 		} catch (Exception e) {
 			System.out.println("Error al eliminar en el dao");
 		}
 
+	}
+
+
+	@Transactional
+	@Override
+	public void update(Detallenotificacion id) {
+		try {
+			em.merge(id);
+		} catch (Exception e) {
+			System.out.println("Error al actualizar en el DAO de detalle de notificacion");
+		}
+		
+		
 	}
 
 }

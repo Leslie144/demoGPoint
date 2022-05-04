@@ -1,5 +1,6 @@
 package pe.edu.upc.serviceimpl;
 
+
 import java.util.List;
 
 import javax.inject.Inject;
@@ -27,9 +28,17 @@ public class DetallenotificacionServiceImpl implements IDetallenotificacionServi
 	}
 
 	@Override
-	public void delete(int idNotificacion) {
-		dnDao.delete(idNotificacion);
+	public void delete(int id) {
+		dnDao.delete(id);
 		
 	}
+
+	@Override
+	public void update(Detallenotificacion id) {
+		dnDao.update(id);
+		
+	}
+
+	
 
 }
