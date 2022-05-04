@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head></h:head>
+<ui:composition template="master.xhtml">
+
+	<ui:define name="content">
+
+		<h2>Registro de Detalle Reseña</h2>
+
+		<h:form>
+
+
+			<h:outputLabel value="Reseña: " for="cboresena"
+				styleClass="control-label" />
+			<p:selectOneMenu id="cboresena"
+				value="#{detalleResenaController.dr.review}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{detalleResenaController.listaResenas}"
+					var="r" itemLabel="#{r.idReview}" itemValue="#{r}" />
+			</p:selectOneMenu>
+			<br />
+
+			<h:outputLabel value="Usuario: " for="cboUsuario"
+				styleClass="control-label" />
+			<p:selectOneMenu id="cboUsuario"
+				value="#{detalleResenaController.dr.usuario}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{detalleResenaController.listaUsuarios}"
+					var="u" itemLabel="#{u.usuario}" itemValue="#{u}" />
+			</p:selectOneMenu>
+			<br />
+
+			<h:outputLabel value="Juego: " for="juego" styleClass="control-label" />
+			<p:inputText id="juego" styleClass="form-control"
+				value="#{detalleResenaController.dr.juego}" required="true" />
+
+
+			<h:outputLabel value="Fecha de Publicación " for="fechapub"
+				styleClass="control-label" />
+			<p:calendar id="fechapub" pattern="dd/MM/yyyy"
+				value="#{detalleResenaController.dr.fechaPublicación}"
+				showOn="button" timeZone="America/Mexico_City"></p:calendar>
+			<br />
+
+
+			<p:commandButton value="Grabar"
+				actionListener="#{detalleResenaController.insert()}"
+				action="listaDetalleResenas?faces-redirect=true" update="@form" />
+
+		</h:form>
+	</ui:define>
+	<ui:define name="footerCont">
+	</ui:define>
+</ui:composition>
+</html>
