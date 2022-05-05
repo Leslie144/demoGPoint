@@ -22,28 +22,19 @@ public class DetalleGaleriaController {
 	private DetalleGaleria dg;
 	private List<DetalleGaleria> listaDetalleGalerias;
 
-	// @Inject
-	// private IGaleriaService gService;
-	// private List<Galeria> listaGalerias;
-
+	
 	@Inject
 	private IUsuarioService uService;
 	private List<Usuario> listaUsuarios;
 
-	// @Inject
-	// private IJuegoService jService;
-	// private List<Juego> listaJuegos;
-
+	
 	// constructor
 	public void init() {
 		this.dg = new DetalleGaleria();
 		this.listaDetalleGalerias = new ArrayList<DetalleGaleria>();
-		// this.listaGalerias = new ArrayList<Galeria>();
+		
 		this.listaUsuarios = new ArrayList<Usuario>();
-		// this.listGalerias();
-		// this.listUsuarios();
-		// this.listJuegos();
-		// this.list();
+		
 
 	}
 
@@ -52,7 +43,7 @@ public class DetalleGaleriaController {
 	public String newDetalleGaleria() {
 
 		this.setDg(new DetalleGaleria());
-		return "detallenotificacion.xhtml";
+		return "detalleGaleria.xhtml";
 	}
 
 	public void insert() {
@@ -72,21 +63,7 @@ public class DetalleGaleriaController {
 		}
 	}
 
-	// public void listGaleria() {
-	// try {
-	// 	listaGalerias = gService.list();
-	// } catch (Exception e) {
-	// 	System.out.println("Error al listar juegos en el controlador de detallegaleria");
-	// }
-	//}
-
-	// public void listJuegos() {
-	// try {
-	// listaJuegos = jService.list();
-	// } catch (Exception e) {
-	// System.out.println("Error al listar juegos en el controlador de detallegaleria");
-	// }
-	// }
+	
 
 	public void listUsuarios() {
 		try {
@@ -132,20 +109,5 @@ public class DetalleGaleriaController {
 		this.listaUsuarios = listaUsuarios;
 	}
 
-	// public List<Juego> getListaJuegos() {
-	// return listaJuegos;
-	// }
-
-	// public void setListaJuegos(List<Juego> listaJuegos) {
-	// this.listaJuegos = listaJuegos;
-	// }
-
-	// public List<Galeria> getListaGalerias() {
-	// return listaGalerias;
-	// }
-
-	// public void setListaGalerias(List<Galerias> listaGalerias) {
-	// this.listaGalerias = listaGalerias;
-	// }
-
+	
 }

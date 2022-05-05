@@ -2,6 +2,7 @@ package pe.edu.upc.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
@@ -31,7 +32,7 @@ public class NotificacionController {
 		this.list();
 	}
 
-	// métodos
+	// mï¿½todos
 
 	public String newNotificacion() {
 
@@ -81,6 +82,24 @@ public class NotificacionController {
 
 	public void setListaNotificaciones(List<Notificacion> listaNotificaciones) {
 		this.listaNotificaciones = listaNotificaciones;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(listaNotificaciones, n, nService);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		NotificacionController other = (NotificacionController) obj;
+		return Objects.equals(listaNotificaciones, other.listaNotificaciones) && Objects.equals(n, other.n)
+				&& Objects.equals(nService, other.nService);
 	}
 
 

@@ -28,9 +28,7 @@ public class Detallenotificacion {
 	private Usuario usuario;
 	
 	
-	//@ManyTo
-	//@JoinColumn(name = "idJuego", nullable = false)
-	//private Juego juego;
+
 	
 	@Column(name = "fechapublicacion", nullable = false)
 	private Date fechapublicacion;
@@ -40,12 +38,12 @@ public class Detallenotificacion {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Detallenotificacion(int id, Notificacion notificacion, Usuario usuario, Juego juego, Date fechapublicacion) {
+	public Detallenotificacion(int id, Notificacion notificacion, Usuario usuario, Date fechapublicacion) {
 		super();
 		this.id = id;
 		this.notificacion = notificacion;
 		this.usuario = usuario;
-		//this.juego = juego;
+		
 		this.fechapublicacion = fechapublicacion;
 	}
 
@@ -74,13 +72,7 @@ public class Detallenotificacion {
 		this.usuario = usuario;
 	}
 
-	//public Juego getJuego() {
-		//return juego;
-	//}
-
-	//public void setJuego(Juego juego) {
-		//this.juego = juego;
-	//}
+	
 
 	public Date getFechapublicacion() {
 		return fechapublicacion;

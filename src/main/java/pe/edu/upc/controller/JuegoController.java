@@ -9,7 +9,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import pe.edu.upc.entidades.Vaccination;
 import pe.edu.upc.entities.Calificacion;
 import pe.edu.upc.entities.Juego;
 import pe.edu.upc.service.IJuegoService;

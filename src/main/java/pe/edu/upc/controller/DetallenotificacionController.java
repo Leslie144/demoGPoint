@@ -32,9 +32,6 @@ public class DetallenotificacionController {
 	private List<Usuario> listaUsuarios;
 	
 
-	//@Inject
-		//private IJuegoService jService;
-		//private List<Juego> listaJuegos;
 	
 	
 	
@@ -44,10 +41,10 @@ public class DetallenotificacionController {
 		this.dn = new Detallenotificacion();
 		this.listaDetallenotificaciones = new ArrayList<Detallenotificacion>();
 		this.listaNotificaciones = new ArrayList<Notificacion>();
-		//this.listaJuegos = new ArrayList<Juego>();
+		
 		this.listaUsuarios = new ArrayList<Usuario>();
 		this.listNotificaciones();
-		//this.listJuegos();
+		
 		this.listUsuarios();
 		this.list();
 	}
@@ -85,13 +82,6 @@ public class DetallenotificacionController {
 		}
 	}
 	
-	//public void listJuegos() {
-		//try {
-			//listaJuegos = jService.list();
-		//} catch (Exception e) {
-			//System.out.println("Error al listar juegos en el controlador de detallenotificacion");
-		//}
-	//}
 
 	public void listUsuarios() {
 		try {
@@ -133,13 +123,7 @@ public class DetallenotificacionController {
 		this.listaNotificaciones = listaNotificaciones;
 	}
 
-	//public List<Juego> getListaJuegos() {
-		//return listaJuegos;
-	//}
-
-	//public void setListaJuegos(List<Juego> listaJuegos) {
-		//this.listaJuegos = listaJuegos;
-	//}
+	
 
 	public List<Usuario> getListaUsuarios() {
 		return listaUsuarios;
