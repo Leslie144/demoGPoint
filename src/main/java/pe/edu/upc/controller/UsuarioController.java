@@ -93,6 +93,20 @@ public class UsuarioController {
 		}
 	}
 
+	public void update() {
+		try {
+			usService.update(this.us);
+			this.list();
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+
+	public String updatepre(Usuario usa) {
+		this.setUs(usa);
+		return "usuariomod.xhtml";
+	}
+
 	public Usuario getUs() {
 		return us;
 	}
