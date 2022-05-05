@@ -33,5 +33,12 @@ public class CalificacionServiceImpl implements ICalificacionService {
 		
 		cDao.delete(idClasificacion);
 	}
+	
+	@Override
+	public void update(Calificacion id) {
+		// TODO Auto-generated method stub
+		cDao.update(id);
+	}
+
 
 }

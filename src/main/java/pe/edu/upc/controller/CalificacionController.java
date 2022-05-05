@@ -60,10 +60,23 @@ public class CalificacionController {
 			cService.delete(c.getIdCalificacion());
 			this.list();
 		} catch (Exception e) {
-			System.out.println("Error al eliminar en elcontroller persona");
+			System.out.println("Error al eliminar en elcontroller Calificacion");
 		}
 	}
+	
+	public String updatePre(Calificacion c) {
+		this.setC(c);
 
+		return "preUpdateCalificacion.xhtml";
+	}
+
+	public void update() {
+		try {
+			cService.update(this.c);
+		} catch (Exception e) {
+			System.out.println("Error al modificar Calificacion en el controller");
+		}
+	}
 
 
 	// getters and setters
