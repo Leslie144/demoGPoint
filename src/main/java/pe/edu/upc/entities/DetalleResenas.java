@@ -29,21 +29,21 @@ public class DetalleResenas {
 	@Column(name = "juego", length = 100, nullable = false)
 	private String juego;
 	
-	@Column(name = "fechaPublicación", nullable = false)
-	private Date fechaPublicación;
+	@Column(name = "fechaPublicacion", nullable = false)
+	private Date fechaPublicacion;
 
 	public DetalleResenas() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public DetalleResenas(int id, Review review, Usuario usuario, String juego, Date fechaPublicación) {
+	public DetalleResenas(int id, Review review, Usuario usuario, String juego, Date fechaPublicacion) {
 		super();
 		this.id = id;
 		this.review = review;
 		this.usuario = usuario;
 		this.juego = juego;
-		this.fechaPublicación = fechaPublicación;
+		this.fechaPublicacion = fechaPublicacion;
 	}
 
 	public int getId() {
@@ -62,8 +62,8 @@ public class DetalleResenas {
 		return juego;
 	}
 
-	public Date getFechaPublicación() {
-		return fechaPublicación;
+	public Date getFechaPublicacion() {
+		return fechaPublicacion;
 	}
 
 	public void setId(int id) {
@@ -82,8 +82,8 @@ public class DetalleResenas {
 		this.juego = juego;
 	}
 
-	public void setFechaPublicación(Date fechaPublicación) {
-		this.fechaPublicación = fechaPublicación;
+	public void setFechaPublicacion(Date fechaPublicacion) {
+		this.fechaPublicacion = fechaPublicacion;
 	}
 	
 	

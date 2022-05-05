@@ -5,7 +5,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 
-<ui:composition template="master.xhtml">
+<ui:composition template="/master.xhtml">
 	<ui:define name="content">
 		<h2>Lista de Detalle de Notificaciones</h2>
 		<h:form>
@@ -19,7 +19,7 @@
 				value="#{detallenotificacionController.listaDetallenotificaciones}"
 				paginator="true" paginatorPosition="top"
 				rowsPerPageTemplate="5,10,15,20,25" rows="10"
-				emptyMessage="No existen registros" rowIndexVar="item">
+				emptyMessage="No existen registros" rowIndexVar="item" lazy="true">
 
 				<p:column headerText="Id">
 					<h:outputText value="#{dn.id}" />

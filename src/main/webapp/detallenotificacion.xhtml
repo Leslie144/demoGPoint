@@ -4,7 +4,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
-
+<h:head></h:head>
 <ui:composition template="master.xhtml">
 	<ui:define name="content">
 		<h2>Registro de detalle de Notificacion</h2>
@@ -13,7 +13,7 @@
 			<h:outputLabel value="Código de detalle de notificacion" for="id"
 				styleClass="control-label" />
 			<p:inputText id="id"
-				value="#{detallenotificacionController.dn.id}"
+				value="#{detallenotificacionController.dn.id}" 
 				styleClass="form-control" required="true" />
 				
 			<br />
@@ -28,27 +28,18 @@
 					value="#{detallenotificacionController.listaNotificaciones}"
 					var="n" itemLabel="#{n.idNotificacion}" itemValue="#{n}" />
 			</p:selectOneMenu>
-
+			
+			
 			<br />
 
-			<!--<h:outputLabel value="Juego " for="cboJuego"
-				styleClass="control-label" />
-
-			<p:selectOneMenu id="cboJuego"
-				value="#{detallenotificacionController.dn.juego}"
-				converter="omnifaces.SelectItemsConverter">
-				<f:selectItems value="#{detallenotificacionController.listaJuegos}" var="j"
-					itemLabel="#{j.nombreJuego}" itemValue="#{j}" />
-			</p:selectOneMenu>
-
-			<br />-->
+		
 
 			<h:outputLabel value="Usuario" for="cboUsuario"
 				styleClass="control-label" />
 
 			<p:selectOneMenu id="cboUsuario"
 				valu="#{detallenotificacionController.dn.usuario}"
-				converter="onmifaces.SelectItemsConverter">
+				converter="omnifaces.SelectItemsConverter">
 				<f:selectItems
 					value="#{detallenotificacionController.listaUsuarios}" var="u"
 					itemLabel="#{u.nombre}" itemValue="#{u}" />
@@ -72,7 +63,6 @@
 				styleClass="btn btn-primary" />
 		</h:form>
 	</ui:define>
-	<ui:define name="footerCont">
-	</ui:define>
+	
 </ui:composition>
 </html>
