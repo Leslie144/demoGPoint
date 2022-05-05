@@ -86,10 +86,10 @@ public class Galeria {
 		return idGaleria == other.idGaleria;
 	}
 	
+
+
+
 	
-	
-	
-	
-	
+		
 	
 }
