@@ -13,5 +13,7 @@ public interface IUsuarioService {
 
 	public void update(Usuario id);
 	
+	public List<Usuario> findByNameUser(Usuario u);
+	
 	public Usuario login(Usuario usuario);
 }

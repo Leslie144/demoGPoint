@@ -9,13 +9,17 @@
 	<ui:define name="content">
 		<h2>Lista de Detalle Reseñas</h2>
 		<h:form>
-		
+
 			<div class="form-group">
 				<p:commandButton value="Nuevo"
 					action="#{detalleResenaController.newDetailReview()}"
 					styleClass="btn btn-primary" ajax="false" />
 			</div>
-		
+
+			<p:commandButton value="Lista Reseñas"
+				action="listaResenas?faces-redirect=true" immediate="true"
+				styleClass="btn btn-primary" ajax="false" />
+
 			<p:dataTable id="lstDetalleResena" var="dr"
 				value="#{detalleResenaController.listaDetallesResenas}"
 				paginator="true" paginatorPosition="top"
