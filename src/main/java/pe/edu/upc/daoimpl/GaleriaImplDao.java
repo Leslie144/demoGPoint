@@ -13,7 +13,7 @@ import pe.edu.upc.entities.Galeria;
 
 public class GaleriaImplDao implements IGaleriaDao {
 
-	@PersistenceContext(unitName = "demoSX61v1")
+	@PersistenceContext(unitName = "demoGPoint")
 	private EntityManager em; // referencia al persisten
 
 	

@@ -43,8 +43,8 @@ public class Juego {
 	@Column(name = "fechaLanzamiento", nullable = false)
 	private Date fechaLanzamiento;
 
-	@Column(name = "tamañoJuego", nullable = false)
-	private int tamañoJuego;
+	@Column(name = "tamaAnoJuego", nullable = false)
+	private int tamaAnoJuego;
 	
 	@Column(name = "precioJuego", nullable = false)
 	private float precioJuego;
@@ -53,9 +53,14 @@ public class Juego {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+
+	
+	
 
 	public Juego(int idJuego, Categoria idcategoria, Clasificacion idclasificacion, Calificacion idcalificacion,
-			Popularidad idpopularidad, String nombreJuego, String descripcion, Date fechaLanzamiento, int tamañoJuego,
+			Popularidad idpopularidad, String nombreJuego, String descripcion, Date fechaLanzamiento, int tamaAnoJuego,
 			float precioJuego) {
 		super();
 		this.idJuego = idJuego;
@@ -66,9 +71,16 @@ public class Juego {
 		this.nombreJuego = nombreJuego;
 		this.descripcion = descripcion;
 		this.fechaLanzamiento = fechaLanzamiento;
-		this.tamañoJuego = tamañoJuego;
+		this.tamaAnoJuego = tamaAnoJuego;
 		this.precioJuego = precioJuego;
 	}
+
+
+
+
+
+
+
 
 	public int getIdJuego() {
 		return idJuego;
@@ -134,12 +146,12 @@ public class Juego {
 		this.fechaLanzamiento = fechaLanzamiento;
 	}
 
-	public int getTamañoJuego() {
-		return tamañoJuego;
+	public int getTamaAnoJuego() {
+		return tamaAnoJuego;
 	}
 
-	public void setTamañoJuego(int tamañoJuego) {
-		this.tamañoJuego = tamañoJuego;
+	public void setTamaAnoJuego(int tamaAnoJuego) {
+		this.tamaAnoJuego = tamaAnoJuego;
 	}
 
 	public float getPrecioJuego() {
@@ -149,4 +161,10 @@ public class Juego {
 	public void setPrecioJuego(float precioJuego) {
 		this.precioJuego = precioJuego;
 	}
+
+	
+
+	
+	
+	
 	}
