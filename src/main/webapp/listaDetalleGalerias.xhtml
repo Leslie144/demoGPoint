@@ -10,10 +10,17 @@
 		<h2>Lista de Detalle de Galerias</h2>
 		<h:form>
 			<div class="form-group">
-				<p:commandButton value="Nuevo"
+				<p:commandButton value="Nuevo detalle de galeria"
 					action="#{detalleGaleriaController.newDetalleGaleria()}"
 					styleClass="btn btn-primary" ajax="false" />
 			</div>
+
+
+			<p:commandButton value="Lista Galeria"
+				action="listaGaleria?faces-redirect=true" immediate="true"
+				styleClass="btn btn-primary" ajax="false" />
+
+
 
 			<p:dataTable id="listaDetalleGalerias" var="dg"
 				value="#{detalleGaleriaController.listaDetalleGalerias}"
@@ -32,11 +39,11 @@
 				<!--<p:column headerText="Juego" sortBy="#{dg.juego.juego}">
 					<h:outputText value="#{dn.juego.juego}" />
 				</p:column>-->
-				
+
 				<p:column headerText="Usuario" sortBy="#{dg.usuario.nombre}">
 					<h:outputText value="#{dg.usuario.nombre}" />
 				</p:column>
-				
+
 				<p:column headerText="Operación">
 					<h:commandLink action="detallegaleria" value="Eliminar"
 						actionListener="#{detalleGaleriaController.delete(dg)}">

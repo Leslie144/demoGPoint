@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<ui:composition template="master.xhtml">
+	<ui:define name="content">
+		<h2>Registro de Galerias</h2>
+		<h:form>
+
+
+			<h:outputLabel value="IdGaleria" for="id" styleClass="control-label" />
+			<p:inputText id="id" styleClass="form-control"
+				value="#{galeriaController.ga.idGaleria}" required="true" />
+
+			<h:outputLabel value="Nombre de Galeria" for="nombre"
+				styleClass="control-label" />
+			<p:inputText id="nombre" styleClass="form-control"
+				value="#{galeriaController.ga.nombreGaleria}" required="true" />
+
+			<h:outputLabel value="Cantidad de Juegos" for="cantidad"
+				styleClass="control-label" />
+			<p:inputText id="cantidad" styleClass="form-control"
+				value="#{galeriaController.ga.cantidadDeJuegos}" required="true" />
+
+			<p:commandButton value="Guardar"
+				actionListener="#{galeriaController.insert()}"
+				action="galeria?faces-redirect=true" update="@form" />
+
+
+
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

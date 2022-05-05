@@ -44,6 +44,7 @@ public class Juego {
 	@Column(name = "fechaLanzamiento", nullable = false)
 	private Date fechaLanzamiento;
 
+
 	@Column(name = "tamanoJuego", nullable = false)
 	private int tamanoJuego;
 
@@ -54,7 +55,11 @@ public class Juego {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 
+	
+	
 	public Juego(int idJuego, Categoria idcategoria, Clasificacion idclasificacion, Calificacion idcalificacion,
 			Popularidad idpopularidad, String nombreJuego, String descripcion, Date fechaLanzamiento, int tamanoJuego,
 			float precioJuego) {
