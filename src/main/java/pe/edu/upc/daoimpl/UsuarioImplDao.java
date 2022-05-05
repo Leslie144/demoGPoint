@@ -28,14 +28,14 @@ public class UsuarioImplDao implements IUsuarioDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Usuario> list() {
-		List<Usuario> listaRoles = new ArrayList<Usuario>();
+		List<Usuario> listausuarios = new ArrayList<Usuario>();
 		try {
 			Query jpql = em.createQuery("from Usuario us");
-			listaRoles = (List<Usuario>) jpql.getResultList();
+			listausuarios = (List<Usuario>) jpql.getResultList();
 		} catch (Exception e) {
 			System.out.println("Error al listar en el dao de usuario");
 		}
-		return listaRoles;
+		return listausuarios;
 	}
 
 	@Transactional
@@ -64,15 +64,29 @@ public class UsuarioImplDao implements IUsuarioDao {
 	public List<Usuario> login(String usuario, String contrasena) {
 		List<Usuario> lista = new ArrayList<Usuario>();
 		try {
-			Query query = em.createQuery("FROM Usuario u WHERE u.usuario = ?1 and u.contrasena = ?2");
+			Query query = em.createQuery("from Usuario u where u.usuario = ?1 and u.contrasena = ?2");
 			query.setParameter(1, usuario);
 			query.setParameter(2, contrasena);
 			lista = (List<Usuario>) query.getResultList();
 
 		} catch (Exception e) {
-			throw e;
+			System.out.println("Error al ingresar en el dao de usuario");
 		}
 		return lista;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Usuario> findByNameUser(Usuario u) {
+		List<Usuario> listabuscar = new ArrayList<Usuario>();
+		try {
+			Query jpql = em.createQuery("from Usuario us where us.usuario like?1");
+			jpql.setParameter(1, "%" + u.getUsuario() + "%");
+			listabuscar = (List<Usuario>) jpql.getResultList();
+		} catch (Exception e) {
+			System.out.println("Error al busca en el dao de usuario");
+		}
+		return listabuscar;
 	}
 
 }

@@ -12,8 +12,23 @@
 
 			<div class="form-group">
 				<p:commandButton value="Nuevo"
-					action="#{usuarioController.newUsuario()}" styleClass="btn btn-primary"
-					ajax="false" />
+					action="#{usuarioController.newUsuario()}"
+					styleClass="btn btn-primary" ajax="false" />
+			</div>
+			<p:commandButton value="Rol" action="listRol?faces-redirect=true"
+				immediate="true" styleClass="btn btn-primary" ajax="false" />
+
+			<div class="row">
+				<div class="col-sm-4">
+
+					<h:outputLabel value="Ingrese nombre del usuario a buscar: "
+						for="usuario" styleClass="control-label" />
+					<p:inputText id="usuario" value="#{usuarioController.us.usuario}" />
+					<p:commandButton value="Buscar"
+						actionListener="#{usuarioController.findByNameUser()}"
+						update="lstUsuarios" />
+
+				</div>
 			</div>
 
 

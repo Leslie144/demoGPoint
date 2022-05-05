@@ -34,15 +34,21 @@
 			</p:selectOneMenu>
 			<br />
 
-			<h:outputLabel value="Juego: " for="juego" styleClass="control-label" />
-			<p:inputText id="juego" styleClass="form-control"
-				value="#{detalleResenaController.dr.juego}" required="true" />
+			<h:outputLabel value="Juego: " for="cboJuego"
+				styleClass="control-label" />
+			<p:selectOneMenu id="cboJuego"
+				value="#{detalleResenaController.dr.juego}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{detalleResenaController.listaJuegos}"
+					var="j" itemLabel="#{j.nombreJuego}" itemValue="#{j}" />
+			</p:selectOneMenu>
+			<br />
 
 
 			<h:outputLabel value="Fecha de Publicación " for="fechapub"
 				styleClass="control-label" />
 			<p:calendar id="fechapub" pattern="dd/MM/yyyy"
-				value="#{detalleResenaController.dr.fechaPublicación}"
+				value="#{detalleResenaController.dr.fechaPublicacion}"
 				showOn="button" timeZone="America/Mexico_City"></p:calendar>
 			<br />
 

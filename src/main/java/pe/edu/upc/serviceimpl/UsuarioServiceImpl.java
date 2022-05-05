@@ -48,4 +48,10 @@ public class UsuarioServiceImpl implements IUsuarioService {
 			return listUsuarios.get(0);
 	}
 
+	@Override
+	public List<Usuario> findByNameUser(Usuario u) {
+		// TODO Auto-generated method stub
+		return uDao.findByNameUser(u);
+	}
+
 }

@@ -9,9 +9,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import pe.edu.upc.entities.Calificacion;
-import pe.edu.upc.entities.Categoria;
-import pe.edu.upc.entities.Clasificacion;
 import pe.edu.upc.entities.Juego;
 import pe.edu.upc.entities.Popularidad;
 import pe.edu.upc.service.ICalificacionService;
