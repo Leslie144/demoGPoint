@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<ui:composition template="master.xhtml">
+
+	<ui:define name="content">
+		<h2>Lista Galeria</h2>
+		<h:form>
+		
+		<div class="form-group">
+				<p:commandButton value="Nueva Galeria"
+					action="#{galeriaController.newGaleria()}"
+					styleClass="btn btn-primary" ajax="false" />
+			</div>
+
+
+
+
+			<div class="row">
+				<div class="col-sm-4">
+					<h:outputLabel value="Ingrese nombre de la Galeria a buscar: "
+						for="galeria" styleClass="control-label" />
+
+					<p:inputText id="galeria"
+						value="#{galeriaController.ga.nombreGaleria}"
+						styleClass="form-control" />
+						
+					<p:commandButton value="Buscar "
+						actionListener="#{galeriaController.findByNameGaleria()}"
+						update="LstGaleria" />
+					
+				</div>
+			</div>
+
+			<p:dataTable id="LstGaleria" var="pe"
+				value="#{galeriaController.listaGaleria}" paginator="true"
+				paginatorPosition="top" rowsPerPageTemplate=" 5,10,15,20,25"
+				rows="5" emptyMessage="No existen Galerias creadas"
+				rowIndexVar="item">
+
+				<p:column headerText="Id Galeria">
+					<h:outputText value="#{pe.idGaleria}" />
+				</p:column>
+
+				<p:column headerText="Nombre Galeria">
+					<h:outputText value="#{pe.nombreGaleria}" />
+				</p:column>
+
+				<p:column headerText="Cantidad de Juegos">
+					<h:outputText value="#{pe.cantidadDeJuegos}" />
+				</p:column>
+
+
+				<p:column headerText="Operación">
+					<h:commandLink actionListener="#{galeriaController.delete(pe)}"
+						action="listaGaleria">
+					Eliminar
+					</h:commandLink>
+				</p:column>
+
+				<p:column headerText="Operación 2">
+					<h:commandLink action="#{galeriaController.updatePre(pe)}">
+					Modificar
+					</h:commandLink>
+				</p:column>
+
+
+			</p:dataTable>
+
+
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

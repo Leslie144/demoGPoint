@@ -17,7 +17,7 @@
 			<h:outputLabel value="Categoria" for="cboCategoria"
 				styleClass="control-label" />
 			<p:selectOneMenu id="cboCategoria"
-				value="#{juegoController.j.idcategoria}"
+				value="#{juegoController.j.categoria}"
 				converter="omnifaces.SelectItemsConverter">
 				<f:selectItems value="#{juegoController.listaCategorias}" var="c"
 					itemLabel="#{c.tipoCategoria}" itemValue="#{c}" />
@@ -26,7 +26,7 @@
 			<h:outputLabel value="Clasificacion" for="cboClasificacion"
 				styleClass="control-label" />
 			<p:selectOneMenu id="cboClasificacion"
-				value="#{juegoController.j.idclasificacion}"
+				value="#{juegoController.j.clasificacion}"
 				converter="omnifaces.SelectItemsConverter">
 				<f:selectItems value="#{juegoController.listaClasificaciones}"
 					var="cl" itemLabel="#{cl.tipoClasificacion}" itemValue="#{cl}" />
@@ -35,7 +35,7 @@
 			<h:outputLabel value="Calificacion" for="cboCalificacion"
 				styleClass="control-label" />
 			<p:selectOneMenu id="cboCalificacion"
-				value="#{juegoController.j.idcalificacion}"
+				value="#{juegoController.j.calificacion}"
 				converter="omnifaces.SelectItemsConverter">
 				<f:selectItems value="#{juegoController.listaCalificaciones}"
 					var="ca" itemLabel="#{ca.numEstrellas}" itemValue="#{ca}" />
@@ -44,7 +44,7 @@
 			<h:outputLabel value="Popularidad" for="cboPopularidad"
 				styleClass="control-label" />
 			<p:selectOneMenu id="cboPopularidad"
-				value="#{juegoController.j.idpopularidad}"
+				value="#{juegoController.j.popularidad}"
 				converter="omnifaces.SelectItemsConverter">
 				<f:selectItems value="#{juegoController.listaPopularidad}" var="p"
 					itemLabel="#{p.tipoPopularidad}" itemValue="#{p}" />

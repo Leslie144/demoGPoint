@@ -29,17 +29,17 @@
 				</p:column>
 
 				<p:column headerText="Categoria">
-					<h:outputText value="#{j.idcategoria}" />
+					<h:outputText value="#{j.categoria.tipoCategoria}" />
 				</p:column>
 
 				<p:column headerText="Clasificacion">
-					<h:outputText value="#{j.idclasificacion}" />
+					<h:outputText value="#{j.clasificacion.tipoClasificacion}" />
 				</p:column>
 				<p:column headerText="Calificacion">
-					<h:outputText value="#{j.idcalificacion}" />
+					<h:outputText value="#{j.calificacion.numEstrellas}" />
 				</p:column>
 				<p:column headerText="Popularidad">
-					<h:outputText value="#{j.idpopularidad}" />
+					<h:outputText value="#{j.popularidad.tipoPopularidad}" />
 				</p:column>
 				<p:column headerText="Nombre del Juego">
 					<h:outputText value="#{j.nombreJuego}" />
@@ -60,6 +60,11 @@
 					<h:commandLink action="listaJuegos"
 						actionListener="#{juegoController.delete(j)}">
 					Eliminar
+					</h:commandLink>
+				</p:column>
+				<p:column headerText="Modificar">
+					<h:commandLink action="#{juegoController.update(j)}"
+						value="Modificar">
 					</h:commandLink>
 				</p:column>
 
