@@ -10,6 +10,7 @@ import javax.transaction.Transactional;
 
 import pe.edu.upc.dao.ICalificacionDao;
 import pe.edu.upc.entities.Calificacion;
+import pe.edu.upc.entities.Juego;
 
 public class CalificacionImplDao implements ICalificacionDao {
 
@@ -50,6 +51,16 @@ public class CalificacionImplDao implements ICalificacionDao {
 		} catch (Exception e) {
 
 			System.out.println("Error al eliminar calificación en el dao");
+		}
+	}
+	
+	@Transactional
+	@Override
+	public void update(Calificacion id) {
+		try {
+			em.merge(id);
+		} catch (Exception e) {
+			System.out.println("Error al actualizar Calificacion en el DAO");
 		}
 	}
 
