@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="master.xhtml">
+	<ui:define name="content">
+		<h2>Modificar de Usuario</h2>
+		<h:form>
+
+			<h:outputLabel value="Id" for="id" styleClass="control-label" />
+			<p:inputText autocomplete="off" id="id" styleClass="form-control"
+				value="#{usuarioController.us.idUsuario}" required="true" />
+
+
+			<h:outputLabel value="Rol:    " for="cboRol"
+				styleClass="control-label" />
+			<p:selectOneMenu id="cboRol" value="#{usuarioController.us.rol}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{usuarioController.listaRoles}" var="r"
+					itemLabel="#{r.tipoRol}" itemValue="#{r}" />
+			</p:selectOneMenu>
+			<br />
+
+			<h:outputLabel value="Nombre: " for="nombre"
+				styleClass="control-label" />
+			<p:inputText id="nombre" value="#{usuarioController.us.nombre}"
+				styleClass="form-control" required="true" />
+			<br />
+
+			<h:outputLabel value="Apellido: " for="apellido"
+				styleClass="control-label" />
+			<p:inputText id="apellido" value="#{usuarioController.us.apellido}"
+				styleClass="form-control" required="true" />
+			<br />
+
+			<h:outputLabel value="Usuario: " for="usuario"
+				styleClass="control-label" />
+			<p:inputText id="usuario" value="#{usuarioController.us.usuario}"
+				styleClass="form-control" required="true" />
+			<br />
+
+			<h:outputLabel value="Contraseña: " for="contrasena"
+				styleClass="control-label" />
+			<p:inputText id="contrasena"
+				value="#{usuarioController.us.contrasena}" styleClass="form-control"
+				required="true" />
+			<br />
+
+			<h:outputLabel value="Fecha de Registro " for="fechareg"
+				styleClass="control-label" />
+			<p:calendar id="fechareg" pattern="dd/MM/yyyy"
+				value="#{usuarioController.us.fechaRegistro}" showOn="button"
+				timeZone="America/Mexico_City"></p:calendar>
+			<br />
+
+			<h:outputLabel value="Fecha de Nacimiento " for="fechanac"
+				styleClass="control-label" />
+			<p:calendar id="fechanac" pattern="dd/MM/yyyy"
+				value="#{usuarioController.us.fechaNacimiento}" showOn="button"
+				timeZone="America/Mexico_City"></p:calendar>
+			<br />
+
+			<h:outputLabel value="Correo " for="correo"
+				styleClass="control-label" />
+			<p:inputText id="correo"
+				value="#{usuarioController.us.correoUsuario}"
+				styleClass="form-control" required="true" />
+			<br />
+
+			<p:commandButton value="Grabar"
+				actionListener="#{usuarioController.update()}"
+				action="listaUsuarios?faces-redirect=true" update="@form"></p:commandButton>
+
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

@@ -62,6 +62,13 @@
 						actionListener="#{usuarioController.delete(us)}">
 					</h:commandLink>
 				</p:column>
+
+
+				<p:column headerText="Operación">
+					<h:commandLink action="#{usuarioController.updatepre(us)}"
+						value="Modificar">
+					</h:commandLink>
+				</p:column>
 			</p:dataTable>
 		</h:form>
 	</ui:define>
