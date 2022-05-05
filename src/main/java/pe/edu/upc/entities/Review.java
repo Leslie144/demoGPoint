@@ -1,6 +1,7 @@
 package pe.edu.upc.entities;
 
 import java.util.Date;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -44,6 +45,23 @@ public class Review {
 
 	public void setPublicationDate(Date publicationDate) {
 		this.publicationDate = publicationDate;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(idReview);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Review other = (Review) obj;
+		return idReview == other.idReview;
 	}
 	
 	

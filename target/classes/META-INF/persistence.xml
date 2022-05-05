@@ -4,10 +4,21 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 	<persistence-unit name="demoGPoint">
-		<jta-data-source>java:/DemoGPointDS</jta-data-source>
+		<jta-data-source>java:/websx61DS</jta-data-source>
 		<class>pe.edu.upc.entities.Review</class>
 		<class>pe.edu.upc.entities.Clasificacion</class>
 		<class>pe.edu.upc.entities.Categoria</class>
+		<class>pe.edu.upc.entities.Rol</class>
+		<class>pe.edu.upc.entities.Popularidad</class>
+		<class>pe.edu.upc.entities.Calificacion</class>
+		<class>pe.edu.upc.entities.Usuario</class>
+		<class>pe.edu.upc.entities.DetalleResenas</class>
+		<class>pe.edu.upc.entities.Detallenotificacion</class>
+		<class>pe.edu.upc.entities.Notificacion</class>
+		<class>pe.edu.upc.entities.Transaccion</class>
+		<class>pe.edu.upc.entities.Galeria</class>
+		<class>pe.edu.upc.entities.DetalleGaleria</class>
+		<class>pe.edu.upc.entities.Juego</class>
 		<properties>
 			<property
 				name="javax.persistence.schema-generation.database.action"

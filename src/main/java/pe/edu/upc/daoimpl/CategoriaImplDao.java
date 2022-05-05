@@ -13,7 +13,7 @@ import pe.edu.upc.entities.Categoria;
 
 public class CategoriaImplDao implements ICategoriaDao {
 	
-	@PersistenceContext(unitName = "demoSX61v1")
+	@PersistenceContext(unitName = "demoGPoint")
 	private EntityManager em;
 	
 

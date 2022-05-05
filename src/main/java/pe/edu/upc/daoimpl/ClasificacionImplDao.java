@@ -35,7 +35,7 @@ public class ClasificacionImplDao implements IClasificacionDao {
 			List<Clasificacion> listaPersonas = new ArrayList<Clasificacion>();
 
 			try {
-				Query jpql = em.createQuery("from Clasificacion p");
+				Query jpql = em.createQuery("from Clasificacion c");
 				listaPersonas = (List<Clasificacion>) jpql.getResultList();
 			} catch (Exception e) {
 				System.out.println("Error al listar clasificaciones");

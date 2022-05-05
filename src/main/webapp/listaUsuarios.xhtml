@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="master.xhtml">
+	<ui:define name="content">
+		<h2>Lista de Usuarios</h2>
+		<h:form>
+
+			<div class="form-group">
+				<p:commandButton value="Nuevo"
+					action="#{usuarioController.newUsuario()}"
+					styleClass="btn btn-primary" ajax="false" />
+			</div>
+			<p:commandButton value="Rol" action="listRol?faces-redirect=true"
+				immediate="true" styleClass="btn btn-primary" ajax="false" />
+
+			<div class="row">
+				<div class="col-sm-4">
+
+					<h:outputLabel value="Ingrese nombre del usuario a buscar: "
+						for="usuario" styleClass="control-label" />
+					<p:inputText id="usuario" value="#{usuarioController.us.usuario}" />
+					<p:commandButton value="Buscar"
+						actionListener="#{usuarioController.findByNameUser()}"
+						update="lstUsuarios" />
+
+				</div>
+			</div>
+
+
+
+			<p:dataTable id="lstUsuarios" var="us"
+				value="#{usuarioController.listaUsuarios}" paginator="true"
+				paginatorPosition="top" rowsPerPageTemplate="5,10,15,20,25"
+				rows="10" emptyMessage="No existen registros" rowIndexVar="item">
+
+				<p:column headerText="Id">
+					<h:outputText value="#{us.idUsuario}" />
+				</p:column>
+
+				<p:column headerText="Usuario">
+					<h:outputText value="#{us.usuario}" />
+				</p:column>
+
+				<p:column headerText="Rol" sortBy="#{us.rol.tipoRol}">
+					<h:outputText value="#{us.rol.tipoRol}" />
+				</p:column>
+
+				<p:column headerText="Fecha de registro">
+					<h:outputText value="#{us.fechaRegistro}">
+						<f:convertDateTime pattern="dd-MM-yyyy" timeZone="UTC" />
+					</h:outputText>
+				</p:column>
+
+
+				<p:column headerText="Operación">
+					<h:commandLink action="listaUsuarios" value="Eliminar"
+						actionListener="#{usuarioController.delete(us)}">
+					</h:commandLink>
+				</p:column>
+
+
+				<p:column headerText="Operación">
+					<h:commandLink action="#{usuarioController.updatepre(us)}"
+						value="Modificar">
+					</h:commandLink>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="master.xhtml">
+	<ui:define name="content">
+		<h2>Registro de detalle de Galeria</h2>
+		<h:form>
+
+			<h:outputLabel value="Código de detalle de galeria" for="id"
+				styleClass="control-label" />
+			<p:inputText id="id" value="#{detalleGaleriaController.dg.id}"
+				styleClass="form-control" required="true" />
+
+			<br />
+
+	
+
+			<h:outputLabel value="Usuario" for="cboUsuario"
+				styleClass="control-label" />
+
+			<p:selectOneMenu id="cboUsuario"
+				valu="#{detalleGaleriaController.dg.usuario}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{detalleGaleriaController.listaUsuarios}"
+					var="u" itemLabel="#{u.nombre}" itemValue="#{u}" />
+
+			</p:selectOneMenu>
+			
+		
+			
+			<br />
+
+			<p:commandButton value="Grabar"
+				actionListener="#{detalleGaleriaController.insert()}"
+				action="detalleGaleria?faces-redirect=true" update="@form"
+				styleClass="btn btn-primary" />
+
+		</h:form>
+	</ui:define>
+	<ui:define name="footerCont">
+	</ui:define>
+</ui:composition>
+</html>

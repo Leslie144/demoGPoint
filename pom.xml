@@ -24,13 +24,6 @@
 
 <dependencies>
 
-		<!-- https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-api -->
-		<dependency>
-			<groupId>jakarta.platform</groupId>
-			<artifactId>jakarta.jakartaee-api</artifactId>
-			<version>8.0.0</version>
-			<scope>provided</scope>
-		</dependency>
 		<!-- https://mvnrepository.com/artifact/javax.faces/javax.faces-api -->
 		<dependency>
 			<groupId>javax.faces</groupId>
@@ -38,6 +31,8 @@
 			<version>2.3</version>
 			<scope>provided</scope>
 		</dependency>
+
+
 		<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
@@ -45,8 +40,22 @@
 			<version>11.0.0</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-api -->
+		<dependency>
+			<groupId>jakarta.platform</groupId>
+			<artifactId>jakarta.jakartaee-api</artifactId>
+			<version>8.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.omnifaces/omnifaces -->
+		<dependency>
+			<groupId>org.omnifaces</groupId>
+			<artifactId>omnifaces</artifactId>
+			<version>3.13</version>
+		</dependency>
 
 	</dependencies>
 
-	
+
 </project>

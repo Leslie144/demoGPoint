@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head></h:head>
+<ui:composition template="master.xhtml">
+	<ui:define name="content">
+		<h2>Registro de detalle de Notificacion</h2>
+		<h:form>
+		
+			<h:outputLabel value="Código de detalle de notificacion" for="id"
+				styleClass="control-label" />
+			<p:inputText id="id"
+				value="#{detallenotificacionController.dn.id}" 
+				styleClass="form-control" required="true" />
+				
+			<br />
+			
+			<h:outputLabel value="Notificacion" for="cboNotificacion"
+				styleClass="control-label" />
+
+			<p:selectOneMenu id="cboNotificacion"
+				value="#{detallenotificacionController.dn.notificacion}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems
+					value="#{detallenotificacionController.listaNotificaciones}"
+					var="n" itemLabel="#{n.idNotificacion}" itemValue="#{n}" />
+			</p:selectOneMenu>
+			
+			
+			<br />
+
+		
+
+			<h:outputLabel value="Usuario" for="cboUsuario"
+				styleClass="control-label" />
+
+			<p:selectOneMenu id="cboUsuario"
+				valu="#{detallenotificacionController.dn.usuario}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems
+					value="#{detallenotificacionController.listaUsuarios}" var="u"
+					itemLabel="#{u.nombre}" itemValue="#{u}" />
+
+			</p:selectOneMenu>
+			
+			
+			
+			<br />
+
+			<h:outputLabel value="Fecha de publicacion" for="fecha"
+				styleClass="control-label" />
+			<p:calendar id="fecha" pattern="dd/MM/yyyy"
+				value="#{detallenotificacionController.dn.fechapublicacion}"
+				showOn="button" timeZone="America/Mexico_City" required="true">
+
+			</p:calendar>
+
+			<br />
+			<p:commandButton value="Grabar"
+				actionListener="#{detallenotificacionController.insert()}"
+				action="detallenotificacion?faces-redirect=true" update="@form"
+				styleClass="btn btn-primary" />
+		</h:form>
+	</ui:define>
+	
+</ui:composition>
+</html>
