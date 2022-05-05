@@ -2,14 +2,12 @@ package pe.edu.upc.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import pe.edu.upc.entities.DetalleResenas;
 import pe.edu.upc.entities.Detallenotificacion;
 import pe.edu.upc.entities.Notificacion;
 
