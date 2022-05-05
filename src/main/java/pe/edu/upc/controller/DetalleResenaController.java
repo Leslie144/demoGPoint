@@ -97,7 +97,7 @@ public class DetalleResenaController {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+
 	public void delete(DetalleResenas dere) {
 		try {
 			drService.delete(dere.getId());
@@ -106,9 +106,19 @@ public class DetalleResenaController {
 		}
 	}
 
-	
-	
-	
+	public void update() {
+		try {
+			drService.update(dr);
+			this.list();
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+	public String updatepre(DetalleResenas dere) {
+		this.setDr(dere);
+		return "detalleResenamod.xhtml";
+	}
+
 	public DetalleResenas getDr() {
 		return dr;
 	}
@@ -171,7 +181,5 @@ public class DetalleResenaController {
 				&& Objects.equals(listaUsuarios, other.listaUsuarios) && Objects.equals(rService, other.rService)
 				&& Objects.equals(uService, other.uService);
 	}
-
-
 
 }

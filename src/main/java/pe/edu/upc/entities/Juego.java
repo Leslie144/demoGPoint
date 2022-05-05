@@ -1,7 +1,6 @@
 package pe.edu.upc.entities;
 
 import java.util.Date;
-import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -38,15 +37,15 @@ public class Juego {
 	@Column(name = "nombreJuego", length = 30, nullable = false)
 	private String nombreJuego;
 
-	@Column(name = "descripcion",length = 200, nullable = false)
+	@Column(name = "descripcion", length = 200, nullable = false)
 	private String descripcion;
 
 	@Column(name = "fechaLanzamiento", nullable = false)
 	private Date fechaLanzamiento;
 
 	@Column(name = "tamanoJuego", nullable = false)
-	private float tamanoJuego;
-	
+	private int tamanoJuego;
+
 	@Column(name = "precioJuego", nullable = false)
 	private float precioJuego;
 
@@ -103,7 +102,7 @@ public class Juego {
 		return fechaLanzamiento;
 	}
 
-	public float getTamanoJuego() {
+	public int getTamanoJuego() {
 		return tamanoJuego;
 	}
 
@@ -143,7 +142,7 @@ public class Juego {
 		this.fechaLanzamiento = fechaLanzamiento;
 	}
 
-	public void setTamanoJuego(float tamanoJuego) {
+	public void setTamanoJuego(int tamanoJuego) {
 		this.tamanoJuego = tamanoJuego;
 	}
 
@@ -151,9 +150,4 @@ public class Juego {
 		this.precioJuego = precioJuego;
 	}
 
-
-	}
-	
-
-
-
+}
