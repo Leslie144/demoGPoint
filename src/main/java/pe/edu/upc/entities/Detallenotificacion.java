@@ -27,8 +27,11 @@ public class Detallenotificacion {
 	@JoinColumn(name = "idUsuario", nullable = false)
 	private Usuario usuario;
 	
-	
+	@ManyToOne
+	@JoinColumn(name = "idJuego", nullable = false)
+	private Juego juego;
 
+	
 	
 	@Column(name = "fechapublicacion", nullable = false)
 	private Date fechapublicacion;
@@ -38,9 +41,10 @@ public class Detallenotificacion {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Detallenotificacion(int id, Notificacion notificacion, Usuario usuario, Date fechapublicacion) {
+	public Detallenotificacion(int id, Notificacion notificacion, Juego juego, Usuario usuario, Date fechapublicacion) {
 		super();
 		this.id = id;
+		this .juego = juego;
 		this.notificacion = notificacion;
 		this.usuario = usuario;
 		
@@ -80,6 +84,13 @@ public class Detallenotificacion {
 
 	public void setFechapublicacion(Date fechapublicacion) {
 		this.fechapublicacion = fechapublicacion;
+	}
+	
+	public Juego getJuego() {
+		return juego;
+	}
+	public void setJuego(Juego juego) {
+		this.juego = juego;
 	}
 
 

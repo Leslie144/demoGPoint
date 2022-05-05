@@ -15,7 +15,14 @@ public class DetalleGaleria {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	
+	@ManyToOne
+	@JoinColumn(name = "idGaleria", nullable = false)
+	private Galeria galeria;
+
+	@ManyToOne
+	@JoinColumn(name = "idJuego", nullable = false)
+	private Juego juego;
+
 	@ManyToOne
 	@JoinColumn(name = "idUsuario", nullable = false)
 	private Usuario usuario;
@@ -25,11 +32,13 @@ public class DetalleGaleria {
 		// TODO Auto-generated constructor stub
 	}
 
-	public DetalleGaleria(int id, Usuario usuario) {
+	public DetalleGaleria(int id, Usuario usuario, Galeria galeria, Juego juego) {
 		super();
 		this.id = id;
 		this.usuario = usuario;
-		
+		this.juego = juego;
+		this.galeria = galeria;
+
 	}
 
 	public int getId() {
@@ -47,8 +56,21 @@ public class DetalleGaleria {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
-	
-	
-	
+
+	public Juego getJuego() {
+		return juego;
+	}
+
+	public void setJuego(Juego juego) {
+		this.juego = juego;
+	}
+
+	public Galeria getGaleria() {
+		return galeria;
+	}
+
+	public void setGaleria(Galeria galeria) {
+		this.galeria = galeria;
+	}
+
 }

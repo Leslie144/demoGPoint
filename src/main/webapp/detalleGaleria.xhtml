@@ -17,7 +17,19 @@
 
 			<br />
 
-	
+			
+			<h:outputLabel value="Juego " for="cboJuego"
+				styleClass="control-label" />
+
+			<p:selectOneMenu id="cboJuego"
+				value="#{detalleGaleriaController.dg.juego}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{detalleGaleriaController.listaJuegos}" var="j"
+					itemLabel="#{j.nombreJuego}" itemValue="#{j}" />
+			</p:selectOneMenu>
+
+			<br />
+			
 
 			<h:outputLabel value="Usuario" for="cboUsuario"
 				styleClass="control-label" />
@@ -30,7 +42,7 @@
 
 			</p:selectOneMenu>
 			
-		
+			
 			
 			<br />
 

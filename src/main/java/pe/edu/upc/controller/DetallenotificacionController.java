@@ -9,10 +9,12 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import pe.edu.upc.entities.Detallenotificacion;
+import pe.edu.upc.entities.Juego;
 import pe.edu.upc.entities.Notificacion;
 
 import pe.edu.upc.entities.Usuario;
 import pe.edu.upc.service.IDetallenotificacionService;
+import pe.edu.upc.service.IJuegoService;
 import pe.edu.upc.service.INotificacionService;
 import pe.edu.upc.service.IUsuarioService;
 @Named
@@ -31,6 +33,9 @@ public class DetallenotificacionController {
 	private IUsuarioService uService;
 	private List<Usuario> listaUsuarios;
 	
+	@Inject
+	private IJuegoService jService;
+	private List<Juego> listaJuegos;
 
 	
 	
@@ -41,10 +46,10 @@ public class DetallenotificacionController {
 		this.dn = new Detallenotificacion();
 		this.listaDetallenotificaciones = new ArrayList<Detallenotificacion>();
 		this.listaNotificaciones = new ArrayList<Notificacion>();
-		
+		this.listaJuegos = new ArrayList<Juego>();
 		this.listaUsuarios = new ArrayList<Usuario>();
 		this.listNotificaciones();
-		
+		this.listJuegos();
 		this.listUsuarios();
 		this.list();
 	}
@@ -82,6 +87,14 @@ public class DetallenotificacionController {
 		}
 	}
 	
+	public void listJuegos() {
+		try {
+			listaJuegos = jService.list();
+		} catch (Exception e) {
+			System.out.println("Error al listar juegos en el controlador de detallenotificacion");
+		}
+	}
+
 
 	public void listUsuarios() {
 		try {
@@ -133,6 +146,13 @@ public class DetallenotificacionController {
 		this.listaUsuarios = listaUsuarios;
 	}
 
+	public List<Juego> getListaJuegos() {
+		return listaJuegos;
+	}
+
+	public void setListaJuegos(List<Juego> listaJuegos) {
+		this.listaJuegos = listaJuegos;
+	}
 
 	
 	

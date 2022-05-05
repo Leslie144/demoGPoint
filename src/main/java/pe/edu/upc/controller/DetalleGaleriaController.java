@@ -8,9 +8,10 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import pe.edu.upc.entities.DetalleGaleria;
-
+import pe.edu.upc.entities.Juego;
 import pe.edu.upc.entities.Usuario;
 import pe.edu.upc.service.IDetalleGaleriaService;
+import pe.edu.upc.service.IJuegoService;
 import pe.edu.upc.service.IUsuarioService;
 
 @Named
@@ -22,19 +23,20 @@ public class DetalleGaleriaController {
 	private DetalleGaleria dg;
 	private List<DetalleGaleria> listaDetalleGalerias;
 
-	
+	@Inject
+	private IJuegoService jService;
+	private List<Juego> listaJuegos;
+
 	@Inject
 	private IUsuarioService uService;
 	private List<Usuario> listaUsuarios;
 
-	
 	// constructor
 	public void init() {
 		this.dg = new DetalleGaleria();
 		this.listaDetalleGalerias = new ArrayList<DetalleGaleria>();
-		
+
 		this.listaUsuarios = new ArrayList<Usuario>();
-		
 
 	}
 
@@ -63,7 +65,13 @@ public class DetalleGaleriaController {
 		}
 	}
 
-	
+	public void listJuegos() {
+		try {
+			listaJuegos = jService.list();
+		} catch (Exception e) {
+			System.out.println("Error al listar juegos en el controlador de detallegaleria");
+		}
+	}
 
 	public void listUsuarios() {
 		try {
@@ -72,8 +80,7 @@ public class DetalleGaleriaController {
 			System.out.println("Error al listar usuarios en el controlador de detallenotificacion");
 		}
 	}
-	
-	
+
 	public void delete(DetalleGaleria dgo) {
 		try {
 			dgService.delete(dgo.getId());
@@ -81,8 +88,6 @@ public class DetalleGaleriaController {
 			System.out.println("Error ocurrio en el controlador al eliminar!!");
 		}
 	}
-	
-	
 
 	// setters y getters
 	public DetalleGaleria getDg() {
@@ -109,5 +114,12 @@ public class DetalleGaleriaController {
 		this.listaUsuarios = listaUsuarios;
 	}
 
-	
+	public List<Juego> getListaJuegos() {
+		return listaJuegos;
+	}
+
+	public void setListaJuegos(List<Juego> listaJuegos) {
+		this.listaJuegos = listaJuegos;
+	}
+
 }

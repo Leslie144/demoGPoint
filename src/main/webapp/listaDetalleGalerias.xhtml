@@ -24,24 +24,23 @@
 				<p:column headerText="Id">
 					<h:outputText value="#{dg.id}" />
 				</p:column>
-
-				<!--<p:column headerText="Galeria" sortBy="#{dg.galeria.galeria}">
-					<h:outputText value="#{dg.galeria.galeria}" />
-				</p:column>-->
-
-				<!--<p:column headerText="Juego" sortBy="#{dg.juego.juego}">
-					<h:outputText value="#{dn.juego.juego}" />
-				</p:column>-->
 				
+				
+
+				<p:column headerText="Juego" sortBy="#{dg.juego.nombreJuego}">
+					<h:outputText value="#{dg.juego.nombreJuego}" />
+				</p:column>
+
 				<p:column headerText="Usuario" sortBy="#{dg.usuario.nombre}">
 					<h:outputText value="#{dg.usuario.nombre}" />
 				</p:column>
-				
+
 				<p:column headerText="Operación">
 					<h:commandLink action="detallegaleria" value="Eliminar"
 						actionListener="#{detalleGaleriaController.delete(dg)}">
 					</h:commandLink>
 				</p:column>
+				
 			</p:dataTable>
 		</h:form>
 	</ui:define>
