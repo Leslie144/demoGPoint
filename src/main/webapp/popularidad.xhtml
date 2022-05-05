@@ -24,6 +24,10 @@
 			<p:commandButton value="Grabar"
 				actionListener="#{popularidadController.insert()}"
 				action="listPopularidad?faces-redirect=true" update="@form" />
+				
+			<p:commandButton value="Listar Popularidades"
+				actionListener="#{popularidadController.listaPopularidadas}"
+				action="listPopularidad?faces-redirect=true" update="@form" />
 
 		</h:form>
 	</ui:define>

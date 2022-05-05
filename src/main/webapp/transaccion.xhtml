@@ -27,7 +27,8 @@
 					itemLabel="#{j.idJuego}" itemValue="#{j}" />
 			</p:selectOneMenu>
 			<br />
-			<h:outputLabel value="Usuario" for="cboUsuario"
+			<h:outputLabel value="Usuario" for="
+				cboUsuario"
 				styleClass="control-label" />
 			<p:selectOneMenu id="cboUsuario"
 				value="#{transaccionController.tra.usuario}"
@@ -54,6 +55,10 @@
 			<br />
 			<p:commandButton value="Grabar"
 				actionListener="#{transaccionController.insert()}"
+				action="listTransaccion?faces-redirect=true" update="@form" />
+
+			<p:commandButton value="Lista Transacciones"
+				actionListener="#{transaccionController.listaTransacciones}"
 				action="listTransaccion?faces-redirect=true" update="@form" />
 
 		</h:form>
