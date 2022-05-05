@@ -14,6 +14,10 @@
 					action="#{detallenotificacionController.newDetallenotificacion()}"
 					styleClass="btn btn-primary" ajax="false" />
 			</div>
+			
+				<p:commandButton value="Lista Notificaciones"
+				action="listNotificacion?faces-redirect=true" immediate="true"
+				styleClass="btn btn-primary" ajax="false" />
 
 			<p:dataTable id="listaDetallenotificaciones" var="dn"
 				value="#{detallenotificacionController.listaDetallenotificaciones}"

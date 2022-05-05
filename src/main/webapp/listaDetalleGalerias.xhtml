@@ -14,7 +14,11 @@
 					action="#{detalleGaleriaController.newDetalleGaleria()}"
 					styleClass="btn btn-primary" ajax="false" />
 			</div>
-
+			
+			<p:commandButton value="Lista Galerias"
+				action="listGaleria?faces-redirect=true" immediate="true"
+				styleClass="btn btn-primary" ajax="false" />
+			
 			<p:dataTable id="listaDetalleGalerias" var="dg"
 				value="#{detalleGaleriaController.listaDetalleGalerias}"
 				paginator="true" paginatorPosition="top"
