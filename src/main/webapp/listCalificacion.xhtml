@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/master.xhtml">
+
+	<ui:define name="content">
+
+		<h2>Lista de Calificaciones</h2>
+		<h:form>
+
+			<div class="form-group">
+				<p:commandButton value="Nuevo"
+					action="#{calificacionController.newCalificacion()}"
+					styleClass="btn btn-primary" ajax="false" />
+			</div>
+
+			<p:dataTable id="listaCalificacion" var="c"
+				value="#{calificacionController.listaCalificaciones}"
+				paginator="true" paginatorPosition="top"
+				rowsPerPageTemplate="5,10,15,20,25" rows="5"
+				emptyMessage="No existen registros" rowsIndexVar="item">
+
+
+				<p:column headerText="Id">
+					<h:outputText value="#{c.idCalificacion}" />
+				</p:column>
+
+				<p:column headerText="Numero de estrellas">
+					<h:outputText value="#{c.numEstrellas}" />
+				</p:column>
+
+				<p:column headerText="Eliminar">
+					<h:commandLink action="listaCalificacion"
+						actionListener="#{calificacionController.delete(c)}">
+					Eliminar
+					</h:commandLink>
+				</p:column>
+
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+</html>

@@ -23,7 +23,6 @@ public class UsuarioController {
 	List<Usuario> listaUsuarios;
 	private Usuario usuarioActual;
 
-
 	@Inject
 	private IRolService rService;
 	private List<Rol> listaRoles;
@@ -47,7 +46,7 @@ public class UsuarioController {
 			return "403.xhtml";
 		}
 	}
-	
+
 	public String newUsuario() {
 		this.setUs(new Usuario());
 		return "usuario.xhtml";
@@ -84,6 +83,28 @@ public class UsuarioController {
 		} catch (Exception e) {
 			System.out.println("Error ocurrió en el controlador de usuario al eliminar!!");
 		}
+	}
+
+	public void findByNameUser() {
+		try {
+			listaUsuarios = usService.findByNameUser(getUs());
+		} catch (Exception e) {
+			System.out.println("Error ocurrió en el controlador de usuario al buscar!!");
+		}
+	}
+
+	public void update() {
+		try {
+			usService.update(this.us);
+			this.list();
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+
+	public String updatepre(Usuario usa) {
+		this.setUs(usa);
+		return "usuariomod.xhtml";
 	}
 
 	public Usuario getUs() {
