@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<ui:composition template="master.xhtml">
+	<ui:define name="content">
+		<h2>Registro de Juegos</h2>
+		<h:form>
+			<h:outputLabel value="Id" for="id" styleClass="control-label" />
+			<p:inputText id="id" styleClass="form-control"
+				value="#{calificacionController.c.idCalificacion}" required="false" />
+
+			<h:outputLabel value="Categoria" for="cboCategoria"
+				styleClass="control-label" />
+			<p:selectOneMenu id="cboCategoria"
+				value="#{juegoController.j.idcategoria}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{juegoController.listaCategorias}" var="c"
+					itemLabel="#{c.tipoCategoria}" itemValue="#{c}" />
+			</p:selectOneMenu>
+			<br />
+			<h:outputLabel value="Clasificacion" for="cboClasificacion"
+				styleClass="control-label" />
+			<p:selectOneMenu id="cboClasificacion"
+				value="#{juegoController.j.idclasificacion}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{juegoController.listaClasificaciones}"
+					var="cl" itemLabel="#{cl.tipoClasificacion}" itemValue="#{cl}" />
+			</p:selectOneMenu>
+			<br />
+			<h:outputLabel value="Calificacion" for="cboCalificacion"
+				styleClass="control-label" />
+			<p:selectOneMenu id="cboCalificacion"
+				value="#{juegoController.j.idcalificacion}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{juegoController.listaCalificaciones}"
+					var="ca" itemLabel="#{ca.numEstrellas}" itemValue="#{ca}" />
+			</p:selectOneMenu>
+			<br />
+			<h:outputLabel value="Popularidad" for="cboPopularidad"
+				styleClass="control-label" />
+			<p:selectOneMenu id="cboPopularidad"
+				value="#{juegoController.j.idpopularidad}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{juegoController.listaPopularidad}" var="p"
+					itemLabel="#{p.tipoPopularidad}" itemValue="#{p}" />
+			</p:selectOneMenu>
+			<br />
+			<h:outputLabel value="Nombre de Juego" for="NombreJuego"
+				styleClass="control-label" />
+			<p:inputText id="NombreJuego" styleClass="form-control"
+				value="#{juegoController.j.nombreJuego}" required="true" />
+
+			<h:outputLabel value="Descripcion" for="Decripcion"
+				styleClass="control-label" />
+			<p:inputText id="Decripcion" styleClass="form-control"
+				value="#{juegoController.j.descripcion}" required="true" />
+
+			<h:outputLabel value="Fecha de Lanzamiento" for="fechalanzamiento"
+				styleClass="control-label" />
+			<p:calendar id="fechalanzamiento" pattern="dd/MM/yyyy"
+				value="#{juegoController.j.fechaLanzamiento}"
+				styleClass="form-control" showOn="button"
+				timeZone="America/Mexico_City" required="true">
+			</p:calendar>
+			<br />
+			<h:outputLabel value="Tamaño de Juego" for="TamanoJuego"
+				styleClass="control-label" />
+			<p:inputText id="TamanoJuego" styleClass="form-control"
+				value="#{juegoController.j.tamanoJuego}" required="true" />
+			<h:outputLabel value="Precio de Juego" for="PrecioJuego"
+				styleClass="control-label" />
+			<p:inputText id="PrecioJuego" styleClass="form-control"
+				value="#{juegoController.j.precioJuego}" required="true" />
+
+
+			<p:commandButton value="Grabar"
+				actionListener="#{juegoController.insert()}"
+				action="listjuego?faces-redirect=true" update="@form" />
+
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+
+
+</html>

@@ -30,7 +30,7 @@ public class JuegoImplDao implements IJuegoDao {
 	public List<Juego> list() {
 		List<Juego> listaRoles = new ArrayList<Juego>();
 		try {
-			Query jpql = em.createQuery("from Juego us");
+			Query jpql = em.createQuery("from Juego j");
 			listaRoles = (List<Juego>) jpql.getResultList();
 		} catch (Exception e) {
 			System.out.println("Error al listar Juego en el dao");

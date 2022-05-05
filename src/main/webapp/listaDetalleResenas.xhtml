@@ -9,13 +9,17 @@
 	<ui:define name="content">
 		<h2>Lista de Detalle Reseñas</h2>
 		<h:form>
-		
+
 			<div class="form-group">
 				<p:commandButton value="Nuevo"
 					action="#{detalleResenaController.newDetailReview()}"
 					styleClass="btn btn-primary" ajax="false" />
 			</div>
-		
+
+			<p:commandButton value="Lista Reseñas"
+				action="listaResenas?faces-redirect=true" immediate="true"
+				styleClass="btn btn-primary" ajax="false" />
+
 			<p:dataTable id="lstDetalleResena" var="dr"
 				value="#{detalleResenaController.listaDetallesResenas}"
 				paginator="true" paginatorPosition="top"
@@ -34,13 +38,13 @@
 					<h:outputText value="#{dr.usuario.usuario}" />
 				</p:column>
 
-				<p:column headerText="Juego">
-					<h:outputText value="#{dr.juego}" />
+				<p:column headerText="Juego" sortBy="#{dr.juego.nombreJuego}">
+					<h:outputText value="#{dr.juego.nombreJuego}" />
 				</p:column>
 
 
 				<p:column headerText="Fecha de Publicación">
-					<h:outputText value="#{dr.fechaPublicación}">
+					<h:outputText value="#{dr.fechaPublicacion}">
 						<f:convertDateTime pattern="dd-MM-yyyy" timeZone="UTC" />
 					</h:outputText>
 				</p:column>
@@ -50,6 +54,12 @@
 				<p:column headerText="Operación">
 					<h:commandLink action="listaDetalleResenas" value="Eliminar"
 						actionListener="#{detalleResenaController.delete(dr)}">
+					</h:commandLink>
+				</p:column>
+
+				<p:column headerText="Operación">
+					<h:commandLink action="#{detalleResenaController.updatepre(dr)}"
+						value="Modificar">
 					</h:commandLink>
 				</p:column>
 			</p:dataTable>

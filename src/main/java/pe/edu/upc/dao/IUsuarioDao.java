@@ -13,5 +13,7 @@ public interface IUsuarioDao {
 
 	public void update(Usuario id);
 
+	public List<Usuario> findByNameUser(Usuario u);
+	
 	public List<Usuario> login(String usuario, String contrasena);
 }
