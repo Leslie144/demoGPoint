@@ -12,4 +12,5 @@ public interface IDetalleResenaDao {
 	public void delete(int id);
 
 	public void update(DetalleResenas id);
+
 }

@@ -36,6 +36,12 @@
 						actionListener="#{reviewController.delete(r)}">
 					</h:commandLink>
 				</p:column>
+				
+				<p:column headerText="Operación">
+					<h:commandLink action="#{reviewController.updatepre(r)}"
+						value="Modificar">
+					</h:commandLink>
+				</p:column>
 			</p:dataTable>
 		</h:form>
 	</ui:define>

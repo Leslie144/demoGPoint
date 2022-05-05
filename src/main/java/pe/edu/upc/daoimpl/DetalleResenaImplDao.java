@@ -59,4 +59,6 @@ public class DetalleResenaImplDao implements IDetalleResenaDao {
 		}
 	}
 
+	
+
 }

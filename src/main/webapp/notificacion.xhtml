@@ -9,6 +9,7 @@
 <ui:composition template="master.xhtml">
 	<ui:define name="content">
 		<h2>Registro de Notificaciones</h2>
+		
 		<h:form>
 
 			<h:outputLabel value="Id" for="id" styleClass="control-label" />
@@ -24,11 +25,12 @@
 			<p:commandButton value="Grabar"
 				actionListener="#{notificacionController.insert()}"
 				action="listNotificacion?faces-redirect=true" update="@form" />
-
+				
+			<p:commandButton value="Lista Notificaciones"
+				actionListener="#{notificacionController.listaNotificaciones}"
+				action="listNotificacion?faces-redirect=true" update="@form" />
 		</h:form>
 	</ui:define>
 
 </ui:composition>
-
-
 </html>

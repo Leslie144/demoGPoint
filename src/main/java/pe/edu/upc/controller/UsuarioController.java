@@ -33,7 +33,6 @@ public class UsuarioController {
 		this.listaUsuarios = new ArrayList<Usuario>();
 		this.listaRoles = new ArrayList<Rol>();
 		this.list();
-		this.listRol();
 
 	}
 
