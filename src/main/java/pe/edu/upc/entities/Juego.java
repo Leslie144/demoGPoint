@@ -21,19 +21,19 @@ public class Juego {
 
 	@OneToOne
 	@JoinColumn(name = "idCategoria", nullable = false)
-	private Categoria idcategoria;
+	private Categoria categoria;
 
 	@OneToOne
 	@JoinColumn(name = "idClasificacion", nullable = false)
-	private Clasificacion idclasificacion;
+	private Clasificacion clasificacion;
 
 	@OneToOne
 	@JoinColumn(name = "idCalificacion", nullable = false)
-	private Calificacion idcalificacion;
+	private Calificacion calificacion;
 
 	@OneToOne
 	@JoinColumn(name = "idPopularidad", nullable = false)
-	private Popularidad idpopularidad;
+	private Popularidad popularidad;
 
 	@Column(name = "nombreJuego", length = 30, nullable = false)
 	private String nombreJuego;
@@ -65,10 +65,10 @@ public class Juego {
 			float precioJuego) {
 		super();
 		this.idJuego = idJuego;
-		this.idcategoria = idcategoria;
-		this.idclasificacion = idclasificacion;
-		this.idcalificacion = idcalificacion;
-		this.idpopularidad = idpopularidad;
+		this.categoria = idcategoria;
+		this.clasificacion = idclasificacion;
+		this.calificacion = idcalificacion;
+		this.popularidad = idpopularidad;
 		this.nombreJuego = nombreJuego;
 		this.descripcion = descripcion;
 		this.fechaLanzamiento = fechaLanzamiento;
@@ -95,21 +95,7 @@ public class Juego {
 		return idJuego;
 	}
 
-	public Categoria getIdcategoria() {
-		return idcategoria;
-	}
-
-	public Clasificacion getIdclasificacion() {
-		return idclasificacion;
-	}
-
-	public Calificacion getIdcalificacion() {
-		return idcalificacion;
-	}
-
-	public Popularidad getIdpopularidad() {
-		return idpopularidad;
-	}
+	
 
 	public String getNombreJuego() {
 		return nombreJuego;
@@ -135,20 +121,36 @@ public class Juego {
 		this.idJuego = idJuego;
 	}
 
-	public void setIdcategoria(Categoria idcategoria) {
-		this.idcategoria = idcategoria;
+	public Categoria getCategoria() {
+		return categoria;
 	}
 
-	public void setIdclasificacion(Clasificacion idclasificacion) {
-		this.idclasificacion = idclasificacion;
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
 
-	public void setIdcalificacion(Calificacion idcalificacion) {
-		this.idcalificacion = idcalificacion;
+	public Clasificacion getClasificacion() {
+		return clasificacion;
 	}
 
-	public void setIdpopularidad(Popularidad idpopularidad) {
-		this.idpopularidad = idpopularidad;
+	public void setClasificacion(Clasificacion clasificacion) {
+		this.clasificacion = clasificacion;
+	}
+
+	public Calificacion getCalificacion() {
+		return calificacion;
+	}
+
+	public void setCalificacion(Calificacion calificacion) {
+		this.calificacion = calificacion;
+	}
+
+	public Popularidad getPopularidad() {
+		return popularidad;
+	}
+
+	public void setPopularidad(Popularidad popularidad) {
+		this.popularidad = popularidad;
 	}
 
 	public void setNombreJuego(String nombreJuego) {
