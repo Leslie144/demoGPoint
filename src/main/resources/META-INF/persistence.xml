@@ -15,10 +15,10 @@
 		<class>pe.edu.upc.entities.DetalleResenas</class>
 		<class>pe.edu.upc.entities.Detallenotificacion</class>
 		<class>pe.edu.upc.entities.Notificacion</class>
-		<class>pe.edu.upc.entities.Transaccion</class>
 		<class>pe.edu.upc.entities.Galeria</class>
 		<class>pe.edu.upc.entities.DetalleGaleria</class>
 		<class>pe.edu.upc.entities.Juego</class>
+		<class>pe.edu.upc.entities.Transaccion</class>
 		<properties>
 			<property
 				name="javax.persistence.schema-generation.database.action"

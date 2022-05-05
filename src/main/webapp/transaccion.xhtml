@@ -24,7 +24,7 @@
 				value="#{transaccionController.tra.juego}"
 				converter="omnifaces.SelectItemsConverter">
 				<f:selectItems value="#{transaccionController.listaJuegos}" var="j"
-					itemLabel="#{j.idJuego}" itemValue="#{j}" />
+					itemLabel="#{j.nombreJuego}" itemValue="#{j}" />
 			</p:selectOneMenu>
 			<br />
 			<h:outputLabel value="Usuario" for="
@@ -34,8 +34,7 @@
 				value="#{transaccionController.tra.usuario}"
 				converter="omnifaces.SelectItemsConverter">
 				<f:selectItems value="#{transaccionController.listaUsuarios}"
-					var="u" itemLabel="#{u.idUsuario} {v.descriptionVaccine}"
-					itemValue="#{u}" />
+					var="u" itemLabel="#{u.usuario}" itemValue="#{u}" />
 			</p:selectOneMenu>
 			<br />
 			<h:outputLabel value="Fecha de Transaccion" for="fecha"

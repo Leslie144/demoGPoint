@@ -43,6 +43,14 @@ public class TransaccionController {
 		this.listUsuarios();
 	}
 	
+	
+	public String newTransaccion() {
+
+		this.setTra(new Transaccion());
+		return "transaccion.xhtml";
+	}
+	
+	
 	public void insert() {
 		try {
 			
@@ -78,23 +86,6 @@ public class TransaccionController {
 			System.out.println(e.getMessage());
 		}
 	}
-
-	//lleva la data al formulario
-	
-	/*public String updatePre(Vaccination vac) {
-		this.setVa(vac);
-		
-		return "preUpdate.xhtml";
-	}
-	
-	//Modificación en BD
-	public void update() {
-		try {
-			vaService.update(this.va);
-		} catch (Exception e) {
-			System.out.println("Error al modificar en el controlador de vacunación");
-		}
-	}*/
 	
     //getters & setters	
 	public Transaccion getTra() {
@@ -127,6 +118,16 @@ public class TransaccionController {
 
 	public void setListaUsuarios(List<Usuario> listaUsuarios) {
 		this.listaUsuarios = listaUsuarios;
+	}
+
+
+	public ITransaccionService getTraService() {
+		return traService;
+	}
+
+
+	public void setTraService(ITransaccionService traService) {
+		this.traService = traService;
 	}
 	
 	

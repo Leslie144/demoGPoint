@@ -9,6 +9,13 @@
 	<ui:define name="content">
 		<h2>Lista de Transacciones</h2>
 		<h:form>
+
+			<div class="form-group">
+				<p:commandButton value="Nuevo"
+					action="#{transaccionController.newTransaccion()}"
+					styleClass="btn btn-primary" ajax="false" />
+			</div>
+
 			<p:dataTable id="lstTransacciones" var="tra"
 				value="#{transaccionController.listaTransacciones}" paginator="true"
 				paginatorPosition="top" rowsPerPageTemplate="5,10,15,20,25"
@@ -29,14 +36,18 @@
 					<h:outputText value="#{tra.precioJuego}" />
 				</p:column>
 				<p:column headerText="Fecha de Transaccion">
-					<h:outputText value="##{tra.fechaTransaccion}">
+					<h:outputText value="#{tra.fechaTransaccion}">
 						<f:convertDateTime pattern="dd-MM-yyyy" timeZone="UTC" />
 					</h:outputText>
 				</p:column>
 				<p:column headerText="Operacion">
 					<h:commandLink action="#{vaccinationController.updatePre(va)}"
-						value="Modificar" />
+						value="Eliminar" />
 				</p:column>
+
+				<p:commandButton value="Grabar"
+					actionListener="#{transaccionController.insert()}"
+					action="listTransaccion?faces-redirect=true" update="@form" />
 
 			</p:dataTable>
 

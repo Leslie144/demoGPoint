@@ -17,9 +17,9 @@ public class Transaccion {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idTransaccion;
 	
-	//@ManyToOne
-	//@JoinColumn(name = "idJuego", nullable = false)
-	//private Juego juego;
+	@ManyToOne
+	@JoinColumn(name = "idJuego", nullable = false)
+	private Juego juego;
 	
 	@ManyToOne
 	@JoinColumn(name = "idUsuario", nullable = false)
@@ -38,7 +38,7 @@ public class Transaccion {
 	public Transaccion(int idTransaccion, Juego juego, Usuario usuario, int precioJuego, Date fechaTransaccion) {
 		super();
 		this.idTransaccion = idTransaccion;
-		//this.juego = juego;
+		this.juego = juego;
 		this.usuario = usuario;
 		this.precioJuego = precioJuego;
 		this.fechaTransaccion = fechaTransaccion;
@@ -56,13 +56,13 @@ public class Transaccion {
 		this.idTransaccion = idTransaccion;
 	}
 
-	//public Juego getJuego() {
-		//return juego;
-	//}
+	public Juego getJuego() {
+		return juego;
+	}
 
-	//public void setJuego(Juego juego) {
-		//this.juego = juego;
-	//}
+	public void setJuego(Juego juego) {
+		this.juego = juego;
+	}
 
 	public Usuario getUsuario() {
 		return usuario;
