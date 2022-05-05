@@ -1,7 +1,6 @@
 package pe.edu.upc.entities;
 
 import java.util.Date;
-import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -44,8 +43,8 @@ public class Juego {
 	@Column(name = "fechaLanzamiento", nullable = false)
 	private Date fechaLanzamiento;
 
-	@Column(name = "tamanoJuego", nullable = false)
-	private float tamanoJuego;
+	@Column(name = "tamañoJuego", nullable = false)
+	private int tamañoJuego;
 	
 	@Column(name = "precioJuego", nullable = false)
 	private float precioJuego;
@@ -56,7 +55,7 @@ public class Juego {
 	}
 
 	public Juego(int idJuego, Categoria idcategoria, Clasificacion idclasificacion, Calificacion idcalificacion,
-			Popularidad idpopularidad, String nombreJuego, String descripcion, Date fechaLanzamiento, int tamanoJuego,
+			Popularidad idpopularidad, String nombreJuego, String descripcion, Date fechaLanzamiento, int tamañoJuego,
 			float precioJuego) {
 		super();
 		this.idJuego = idJuego;
@@ -67,7 +66,7 @@ public class Juego {
 		this.nombreJuego = nombreJuego;
 		this.descripcion = descripcion;
 		this.fechaLanzamiento = fechaLanzamiento;
-		this.tamanoJuego = tamanoJuego;
+		this.tamañoJuego = tamañoJuego;
 		this.precioJuego = precioJuego;
 	}
 
@@ -75,85 +74,79 @@ public class Juego {
 		return idJuego;
 	}
 
-	public Categoria getIdcategoria() {
-		return idcategoria;
-	}
-
-	public Clasificacion getIdclasificacion() {
-		return idclasificacion;
-	}
-
-	public Calificacion getIdcalificacion() {
-		return idcalificacion;
-	}
-
-	public Popularidad getIdpopularidad() {
-		return idpopularidad;
-	}
-
-	public String getNombreJuego() {
-		return nombreJuego;
-	}
-
-	public String getDescripcion() {
-		return descripcion;
-	}
-
-	public Date getFechaLanzamiento() {
-		return fechaLanzamiento;
-	}
-
-	public float getTamanoJuego() {
-		return tamanoJuego;
-	}
-
-	public float getPrecioJuego() {
-		return precioJuego;
-	}
-
 	public void setIdJuego(int idJuego) {
 		this.idJuego = idJuego;
+	}
+
+	public Categoria getIdcategoria() {
+		return idcategoria;
 	}
 
 	public void setIdcategoria(Categoria idcategoria) {
 		this.idcategoria = idcategoria;
 	}
 
+	public Clasificacion getIdclasificacion() {
+		return idclasificacion;
+	}
+
 	public void setIdclasificacion(Clasificacion idclasificacion) {
 		this.idclasificacion = idclasificacion;
+	}
+
+	public Calificacion getIdcalificacion() {
+		return idcalificacion;
 	}
 
 	public void setIdcalificacion(Calificacion idcalificacion) {
 		this.idcalificacion = idcalificacion;
 	}
 
+	public Popularidad getIdpopularidad() {
+		return idpopularidad;
+	}
+
 	public void setIdpopularidad(Popularidad idpopularidad) {
 		this.idpopularidad = idpopularidad;
+	}
+
+	public String getNombreJuego() {
+		return nombreJuego;
 	}
 
 	public void setNombreJuego(String nombreJuego) {
 		this.nombreJuego = nombreJuego;
 	}
 
+	public String getDescripcion() {
+		return descripcion;
+	}
+
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+
+	public Date getFechaLanzamiento() {
+		return fechaLanzamiento;
 	}
 
 	public void setFechaLanzamiento(Date fechaLanzamiento) {
 		this.fechaLanzamiento = fechaLanzamiento;
 	}
 
-	public void setTamanoJuego(float tamanoJuego) {
-		this.tamanoJuego = tamanoJuego;
+	public int getTamañoJuego() {
+		return tamañoJuego;
+	}
+
+	public void setTamañoJuego(int tamañoJuego) {
+		this.tamañoJuego = tamañoJuego;
+	}
+
+	public float getPrecioJuego() {
+		return precioJuego;
 	}
 
 	public void setPrecioJuego(float precioJuego) {
 		this.precioJuego = precioJuego;
 	}
-
-
 	}
-	
-
-
-
