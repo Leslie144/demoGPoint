@@ -26,8 +26,9 @@ public class DetalleResenas {
 	@JoinColumn(name = "idUsuario", nullable = false)
 	private Usuario usuario;
 
-	@Column(name = "juego", length = 100, nullable = false)
-	private String juego;
+	@ManyToOne
+	@JoinColumn(name = "idJuego", nullable = false)
+	private Juego juego;
 	
 	@Column(name = "fechaPublicacion", nullable = false)
 	private Date fechaPublicacion;
@@ -37,7 +38,7 @@ public class DetalleResenas {
 		// TODO Auto-generated constructor stub
 	}
 
-	public DetalleResenas(int id, Review review, Usuario usuario, String juego, Date fechaPublicacion) {
+	public DetalleResenas(int id, Review review, Usuario usuario, Juego juego, Date fechaPublicacion) {
 		super();
 		this.id = id;
 		this.review = review;
@@ -58,7 +59,7 @@ public class DetalleResenas {
 		return usuario;
 	}
 
-	public String getJuego() {
+	public Juego getJuego() {
 		return juego;
 	}
 
@@ -78,13 +79,14 @@ public class DetalleResenas {
 		this.usuario = usuario;
 	}
 
-	public void setJuego(String juego) {
+	public void setJuego(Juego juego) {
 		this.juego = juego;
 	}
 
 	public void setFechaPublicacion(Date fechaPublicacion) {
 		this.fechaPublicacion = fechaPublicacion;
 	}
+
 	
 	
 }

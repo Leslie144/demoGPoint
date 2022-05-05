@@ -12,4 +12,5 @@ public interface IReviewDao {
 	public void delete(int id);
 
 	public void update(Review id);
+	
 }

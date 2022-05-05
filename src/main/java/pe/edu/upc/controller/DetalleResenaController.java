@@ -10,9 +10,11 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import pe.edu.upc.entities.DetalleResenas;
+import pe.edu.upc.entities.Juego;
 import pe.edu.upc.entities.Review;
 import pe.edu.upc.entities.Usuario;
 import pe.edu.upc.service.IDetalleResenaService;
+import pe.edu.upc.service.IJuegoService;
 import pe.edu.upc.service.IReviewService;
 import pe.edu.upc.service.IUsuarioService;
 
@@ -32,15 +34,21 @@ public class DetalleResenaController {
 	private IUsuarioService uService;
 	private List<Usuario> listaUsuarios;
 
+	@Inject
+	private IJuegoService jService;
+	private List<Juego> listaJuegos;
+
 	@PostConstruct
 	public void init() {
 		this.dr = new DetalleResenas();
 		this.listaDetallesResenas = new ArrayList<DetalleResenas>();
 		this.listaResenas = new ArrayList<Review>();
 		this.listaUsuarios = new ArrayList<Usuario>();
+		this.listaJuegos = new ArrayList<Juego>();
 		this.list();
 		this.listReview();
 		this.listUsers();
+		this.listPlay();
 
 	}
 
@@ -82,6 +90,14 @@ public class DetalleResenaController {
 		}
 	}
 
+	public void listPlay() {
+		try {
+			listaJuegos = jService.list();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
 	public void delete(DetalleResenas dere) {
 		try {
 			drService.delete(dere.getId());
@@ -90,6 +106,9 @@ public class DetalleResenaController {
 		}
 	}
 
+	
+	
+	
 	public DetalleResenas getDr() {
 		return dr;
 	}
@@ -122,9 +141,18 @@ public class DetalleResenaController {
 		this.listaUsuarios = listaUsuarios;
 	}
 
+	public List<Juego> getListaJuegos() {
+		return listaJuegos;
+	}
+
+	public void setListaJuegos(List<Juego> listaJuegos) {
+		this.listaJuegos = listaJuegos;
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(dr, drService, listaDetallesResenas, listaResenas, listaUsuarios, rService, uService);
+		return Objects.hash(dr, drService, jService, listaDetallesResenas, listaJuegos, listaResenas, listaUsuarios,
+				rService, uService);
 	}
 
 	@Override
@@ -137,10 +165,13 @@ public class DetalleResenaController {
 			return false;
 		DetalleResenaController other = (DetalleResenaController) obj;
 		return Objects.equals(dr, other.dr) && Objects.equals(drService, other.drService)
+				&& Objects.equals(jService, other.jService)
 				&& Objects.equals(listaDetallesResenas, other.listaDetallesResenas)
-				&& Objects.equals(listaResenas, other.listaResenas)
+				&& Objects.equals(listaJuegos, other.listaJuegos) && Objects.equals(listaResenas, other.listaResenas)
 				&& Objects.equals(listaUsuarios, other.listaUsuarios) && Objects.equals(rService, other.rService)
 				&& Objects.equals(uService, other.uService);
 	}
+
+
 
 }

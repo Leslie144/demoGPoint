@@ -39,7 +39,6 @@
 			</h:panelGrid>
 			<a class="nav-link" href="panel.xhtml">Click aqui para entrar->
 				Home</a>
-			<p:commandButton value="Logins" styleClass="btn btn-primary" />
 
 			<p:commandButton value="Login"
 				action="#{usuarioController.ingresar()}" update=":frm"
@@ -47,7 +46,9 @@
 
 
 
-			<p:commandButton value="Crear Usuario" styleClass="btn btn-primary" />
+			<p:commandButton value="Crear Usuario"
+				action="Registrar?faces-redirect=true" immediate="true"
+				styleClass="btn btn-primary" />
 		</div>
 	</h:form>
 
