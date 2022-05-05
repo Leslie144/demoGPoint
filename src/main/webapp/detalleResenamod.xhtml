@@ -12,7 +12,7 @@
 
 			<h:outputLabel value="Id" for="id" styleClass="control-label" />
 			<p:inputText autocomplete="off" id="id" styleClass="form-control"
-				value="#{detalleResenaController.dr.id}" required="true"/>
+				value="#{detalleResenaController.dr.id}" required="true" />
 
 			<h:outputLabel value="Reseña: " for="cboresena"
 				styleClass="control-label" />
@@ -49,7 +49,7 @@
 				styleClass="control-label" />
 			<p:calendar id="fechapub" pattern="dd/MM/yyyy"
 				value="#{detalleResenaController.dr.fechaPublicacion}"
-				showOn="button" timeZone="America/Mexico_City"></p:calendar>
+				showOn="button" timeZone="America/Mexico_City" required="true"></p:calendar>
 			<br />
 
 
