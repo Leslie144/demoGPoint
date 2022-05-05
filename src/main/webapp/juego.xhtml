@@ -14,7 +14,7 @@
 			<p:inputText id="id" styleClass="form-control"
 				value="#{calificacionController.c.idCalificacion}" required="false" />
 
-			<h:outputLabel value="Persona" for="cboCategoria"
+			<h:outputLabel value="Categoria" for="cboCategoria"
 				styleClass="control-label" />
 			<p:selectOneMenu id="cboCategoria"
 				value="#{juegoController.j.idcategoria}"
@@ -22,7 +22,6 @@
 				<f:selectItems value="#{juegoController.listaCategorias}" var="c"
 					itemLabel="#{c.tipoCategoria}" itemValue="#{c}" />
 			</p:selectOneMenu>
-
 			<br />
 			<h:outputLabel value="Clasificacion" for="cboClasificacion"
 				styleClass="control-label" />
@@ -60,8 +59,7 @@
 				styleClass="control-label" />
 			<p:inputText id="Decripcion" styleClass="form-control"
 				value="#{juegoController.j.descripcion}" required="true" />
-			<h:outputLabel value="Tamaño de Juego" for="TamanoJuego"
-				styleClass="control-label" />
+
 			<h:outputLabel value="Fecha de Lanzamiento" for="fechalanzamiento"
 				styleClass="control-label" />
 			<p:calendar id="fechalanzamiento" pattern="dd/MM/yyyy"
@@ -69,7 +67,9 @@
 				styleClass="form-control" showOn="button"
 				timeZone="America/Mexico_City" required="true">
 			</p:calendar>
-
+			<br />
+			<h:outputLabel value="Tamaño de Juego" for="TamanoJuego"
+				styleClass="control-label" />
 			<p:inputText id="TamanoJuego" styleClass="form-control"
 				value="#{juegoController.j.tamanoJuego}" required="true" />
 			<h:outputLabel value="Precio de Juego" for="PrecioJuego"
@@ -80,7 +80,7 @@
 
 			<p:commandButton value="Grabar"
 				actionListener="#{calificacionController.insert()}"
-				action="listCalificacion?faces-redirect=true" update="@form" />
+				action="listjuego?faces-redirect=true" update="@form" />
 
 		</h:form>
 	</ui:define>

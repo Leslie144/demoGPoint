@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/master.xhtml">
+
+	<ui:define name="content">
+
+		<h2>Lista de Juegos</h2>
+		<h:form>
+
+			<div class="form-group">
+				<p:commandButton value="Nuevo"
+					action="#{juegoController.newJuego()}" styleClass="btn btn-primary"
+					ajax="false" />
+			</div>
+
+			<p:dataTable id="listaJuegos" var="j"
+				value="#{juegoController.listaJuegos}" paginator="true"
+				paginatorPosition="top" rowsPerPageTemplate="5,10,15,20,25" rows="5"
+				emptyMessage="No existen registros" rowsIndexVar="item">
+
+
+				<p:column headerText="Id">
+					<h:outputText value="#{j.idJuego}" />
+				</p:column>
+
+				<p:column headerText="Categoria">
+					<h:outputText value="#{j.idcategoria}" />
+				</p:column>
+
+				<p:column headerText="Clasificacion">
+					<h:outputText value="#{j.idclasificacion}" />
+				</p:column>
+				<p:column headerText="Calificacion">
+					<h:outputText value="#{j.idcalificacion}" />
+				</p:column>
+				<p:column headerText="Popularidad">
+					<h:outputText value="#{j.idpopularidad}" />
+				</p:column>
+				<p:column headerText="Nombre del Juego">
+					<h:outputText value="#{j.nombreJuego}" />
+				</p:column>
+				<p:column headerText="Descripcion">
+					<h:outputText value="#{j.descripcion}" />
+				</p:column>
+				<p:column headerText="Fecha de Lanzamiento">
+					<h:outputText value="#{j.fechaLanzamiento}" />
+				</p:column>
+				<p:column headerText="Tamaño de Juego">
+					<h:outputText value="#{j.tamanoJuego}" />
+				</p:column>
+				<p:column headerText="Precio de Juego">
+					<h:outputText value="#{j.precioJuego}" />
+				</p:column>
+				<p:column headerText="Operación">
+					<h:commandLink action="listaJuegos"
+						actionListener="#{juegoController.delete(j)}">
+					Eliminar
+					</h:commandLink>
+				</p:column>
+
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+</html>

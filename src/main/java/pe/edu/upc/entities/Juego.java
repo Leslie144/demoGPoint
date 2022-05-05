@@ -45,7 +45,7 @@ public class Juego {
 	private Date fechaLanzamiento;
 
 	@Column(name = "tamanoJuego", nullable = false)
-	private int tamanoJuego;
+	private float tamanoJuego;
 	
 	@Column(name = "precioJuego", nullable = false)
 	private float precioJuego;
@@ -103,7 +103,7 @@ public class Juego {
 		return fechaLanzamiento;
 	}
 
-	public int getTamanoJuego() {
+	public float getTamanoJuego() {
 		return tamanoJuego;
 	}
 
@@ -143,7 +143,7 @@ public class Juego {
 		this.fechaLanzamiento = fechaLanzamiento;
 	}
 
-	public void setTamanoJuego(int tamanoJuego) {
+	public void setTamanoJuego(float tamanoJuego) {
 		this.tamanoJuego = tamanoJuego;
 	}
 
