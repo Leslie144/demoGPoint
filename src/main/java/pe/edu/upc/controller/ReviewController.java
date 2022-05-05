@@ -57,7 +57,21 @@ public class ReviewController {
 			System.out.println("Error ocurrió en el controlador de reseña al eliminar!!");
 		}
 	}
-	
+
+	public void update() {
+		try {
+			rService.update(r);
+			this.list();
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+
+	public String updatepre(Review revie) {
+		this.setR(revie);
+		return "reviewmod.xhtml";
+	}
+
 	// getters & setters
 	public Review getR() {
 		return r;
