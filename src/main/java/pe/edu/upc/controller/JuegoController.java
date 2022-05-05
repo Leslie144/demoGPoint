@@ -2,6 +2,7 @@ package pe.edu.upc.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
@@ -51,7 +52,7 @@ public class JuegoController {
 		this.listaClasificaciones = new ArrayList<Clasificacion>();
 		this.listaCalificaciones = new ArrayList<Calificacion>();
 		this.listaPopularidad = new ArrayList<Popularidad>();
-		this.listaJuegos();
+		this.list();
 		this.listCategorias();
 		this.listClasificaciones();
 		this.listCalificaciones();
@@ -68,7 +69,7 @@ public class JuegoController {
 	public void insert() {
 		try {
 			jService.insert(j);
-			this.listaJuegos();
+			this.list();
 		} catch (Exception e) {
 			System.out.println("Error al insertar Juego en el controller");
 		}
@@ -106,7 +107,7 @@ public class JuegoController {
 		}
 	}
 
-	public void listaJuegos() {
+	public void list() {
 		try {
 			listaJuegos = jService.list();
 		} catch (Exception e) {
@@ -143,6 +144,7 @@ public class JuegoController {
 	public void setJ(Juego j) {
 		this.j = j;
 	}
+
 
 	public List<Juego> getListaJuegos() {
 		return listaJuegos;
@@ -182,6 +184,28 @@ public class JuegoController {
 
 	public void setListaPopularidad(List<Popularidad> listaPopularidad) {
 		this.listaPopularidad = listaPopularidad;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(jService,j,listaJuegos,cService,listaCategorias,clService,listaClasificaciones,caService,listaCalificaciones,pService,listaPopularidad);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		JuegoController other = (JuegoController) obj;
+		return Objects.equals(jService, other.jService) && Objects.equals(j, other.j)
+				&& Objects.equals(listaJuegos, other.listaJuegos) && Objects.equals(cService, other.cService)
+				&& Objects.equals(listaCategorias, other.listaCategorias)&& Objects.equals(clService, other.clService)
+				&& Objects.equals(listaClasificaciones, other.listaClasificaciones)&& Objects.equals(caService, other.caService)
+				&& Objects.equals(listaCalificaciones, other.listaCalificaciones)&& Objects.equals(pService, other.pService)
+				&& Objects.equals(listaPopularidad, other.listaPopularidad);
 	}
 
 }
